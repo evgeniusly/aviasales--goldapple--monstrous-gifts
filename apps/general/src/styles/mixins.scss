@@ -1,0 +1,19 @@
+@use '@styles/adaptivity' as *;
+
+@function image($image) {
+  @return url('@assets/images/#{$image}');
+}
+
+@mixin hover {
+  @include desktop {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin active {
+  &:active {
+    @content;
+  }
+}

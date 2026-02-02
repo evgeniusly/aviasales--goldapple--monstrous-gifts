@@ -77,6 +77,14 @@
     "MODERN__S3__BUCKET_NAME": {
       "description": "S3 bucket name for file storage",
       "value": "spec-bucket"
+    },
+    "MODERN__WINNERS": {
+      "description": "Winners email list",
+      "value": "win**r1@email.domain,win**r2@email.domain"
+    },
+    "MODERN__WINNERS_LINK": {
+      "description": "Link to the video",
+      "value": "https://www.aviasales.ru/"
     }
   }
 }

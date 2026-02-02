@@ -1,0 +1,123 @@
+.header {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include desktop {
+    padding-top: dpx(32);
+    width: dpx(1805);
+  }
+
+  @include mobile {
+    padding-top: mpx(16);
+    width: mpx(343);
+  }
+}
+
+.logos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include desktop {
+    gap: dpx(32);
+  }
+
+  @include mobile {
+    gap: mpx(8);
+  }
+}
+
+.logoLink {
+  transition: opacity var(--transition-main);
+
+  &:hover {
+    opacity: 0.6;
+  }
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.aviasalesLogoImg {
+  display: block;
+
+  @include desktop {
+    width: dpx(192);
+    height: dpx(40);
+  }
+
+  @include mobile {
+    width: mpx(97);
+    height: mpx(20);
+  }
+}
+
+.clientLogoImg {
+  display: block;
+
+  @include desktop {
+    width: dpx(192);
+    height: dpx(40);
+  }
+
+  @include mobile {
+    width: mpx(97);
+    height: mpx(20);
+  }
+}
+
+.cross {
+  display: block;
+
+  @include desktop {
+    width: dpx(16);
+    height: dpx(16);
+  }
+
+  @include mobile {
+    width: mpx(8);
+    height: mpx(8);
+  }
+}
+
+.rulesLink {
+  display: block;
+  color: #fff;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: none;
+
+  @include desktop {
+    font-size: dpx(16);
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  @include mobile {
+    font-size: mpx(12);
+  }
+}
+
+// at home
+// .screen-home {
+//   .content {
+//     @include desktop {
+//       width: dpx(1620);
+//       padding-top: dpx(100);
+//     }
+//   }
+// }

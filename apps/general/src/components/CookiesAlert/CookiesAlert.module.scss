@@ -1,0 +1,79 @@
+.cookies {
+  --cookies-bg-color: #fff;
+  --cookies-text-color: #000000;
+  --cookies-link-color: #9c9c9c;
+  --cookies-button-bg-color: #9c9c9c;
+  --cookies-button-text-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100010;
+  background: var(--cookies-bg-color);
+
+  @include desktop {
+    gap: dpx(16);
+    width: dpx(774);
+    padding: dpx(12 24);
+    border-radius: dpx(12 12 0 0);
+  }
+
+  @include mobile {
+    gap: mpx(16);
+    width: 100%;
+    padding: mpx(12 24);
+    border-radius: mpx(12 12 0 0);
+  }
+}
+
+.text {
+  color: var(--cookies-text-color);
+  font-weight: 500;
+  line-height: 145%;
+
+  @include desktop {
+    font-size: dpx(13);
+  }
+
+  @include mobile {
+    font-size: mpx(13);
+  }
+
+  a {
+    color: var(--cookies-link-color);
+    text-decoration: none;
+  }
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--cookies-button-bg-color);
+  color: var(--cookies-button-text-color);
+  font-weight: 500;
+  line-height: 130%;
+  outline: none;
+  border: none;
+
+  @include desktop {
+    width: dpx(106);
+    height: dpx(31);
+    font-size: dpx(14);
+    border-radius: dpx(8);
+    cursor: pointer;
+  }
+
+  @include mobile {
+    width: mpx(74);
+    height: mpx(38);
+    font-size: mpx(14);
+    border-radius: mpx(8);
+  }
+}

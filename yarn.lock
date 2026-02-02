@@ -2955,14 +2955,18 @@ __metadata:
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:~18.3.6"
     "@types/react-helmet": "npm:^6.1.11"
+    "@types/yandex-metrika-tag": "npm:^2.0.7"
     "@yandex/smart-captcha": "npm:^2.9.0"
+    adaptive-pixel: "npm:^1.1.2"
     axios: "npm:^1.13.2"
     classnames: "npm:^2.5.1"
     eslint: "npm:^9.39.2"
+    immer: "npm:^11.1.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-i18next: "npm:^15.5.1"
     typescript: "npm:~5.7.3"
+    zustand: "npm:^5.0.11"
   languageName: unknown
   linkType: soft
 
@@ -5835,6 +5839,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/yandex-metrika-tag@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@types/yandex-metrika-tag@npm:2.0.7"
+  checksum: 10c0/f5a0b0cd8189a5e0deb05ae8b19b727fe4a9636ef75f2a5b8c5fce84bb459493b1fd505f553a9fd6b82c5f66bdadc89fe8ab63fb11c9c87051b6b8c103b06237
+  languageName: node
+  linkType: hard
+
 "@types/yargs-parser@npm:*":
   version: 21.0.3
   resolution: "@types/yargs-parser@npm:21.0.3"
@@ -6362,6 +6373,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 10c0/dec73ff59b7d6628a01eebaece7f2bdb8bb62b9b5926dcad0f8931f2b8b79c2be21f6c68ac095592adb5adb15831a3635d9343e6a91d028bbe85d564875ec3ec
+  languageName: node
+  linkType: hard
+
+"adaptive-pixel@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "adaptive-pixel@npm:1.1.2"
+  checksum: 10c0/dc32468b7ac989345fb31114be7da85bb0a3b4272a6b9f9a68813dee424e6def6384aa1702074550e01084e6c36b4799a7c858d6b01cdebe9461e9b51c127fcc
   languageName: node
   linkType: hard
 
@@ -10121,6 +10139,13 @@ __metadata:
   version: 3.0.6
   resolution: "immediate@npm:3.0.6"
   checksum: 10c0/f8ba7ede69bee9260241ad078d2d535848745ff5f6995c7c7cb41cfdc9ccc213f66e10fa5afb881f90298b24a3f7344b637b592beb4f54e582770cdce3f1f039
+  languageName: node
+  linkType: hard
+
+"immer@npm:^11.1.3":
+  version: 11.1.3
+  resolution: "immer@npm:11.1.3"
+  checksum: 10c0/2d0bcb7946274bb99254b8129026da9579591569afdd4f29e5ef3ebf231375c7ab97c344ffbfc9eeabea27a2145623fca1287c17e3ebd007c8cdcfd82954eeb7
   languageName: node
   linkType: hard
 
@@ -16107,5 +16132,26 @@ __metadata:
   version: 1.2.2
   resolution: "yocto-queue@npm:1.2.2"
   checksum: 10c0/36d4793e9cf7060f9da543baf67c55e354f4862c8d3d34de1a1b1d7c382d44171315cc54abf84d8900b8113d742b830108a1434f4898fb244f9b7e8426d4b8f5
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^5.0.11":
+  version: 5.0.11
+  resolution: "zustand@npm:5.0.11"
+  peerDependencies:
+    "@types/react": ">=18.0.0"
+    immer: ">=9.0.6"
+    react: ">=18.0.0"
+    use-sync-external-store: ">=1.2.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+    use-sync-external-store:
+      optional: true
+  checksum: 10c0/61836b48dac5978c9d1b8289d5162a151bee77828371b9aba6431a079b77faca0635ba53da3f7b331295fbc4e78318a109a4527f7a051cb63abfe79b69ccbecf
   languageName: node
   linkType: hard

@@ -1,0 +1,76 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  @include mobile {
+    position: relative;
+    justify-content: flex-start;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+.content {
+  position: relative;
+
+  @include desktop {
+    width: dpx(1620);
+  }
+
+  @include mobile {
+    padding: mpx(80 20);
+  }
+}
+
+.body {
+  @include desktop {
+    width: dpx(660);
+  }
+}
+
+.title {
+  font-weight: 700;
+
+  @include desktop {
+    margin-bottom: dpx(40);
+    font-size: dpx(64);
+  }
+
+  @include mobile {
+    margin-bottom: mpx(16);
+    font-size: mpx(28);
+  }
+}
+
+.text {
+  @include desktop {
+    margin-bottom: dpx(72);
+    font-size: dpx(26);
+  }
+
+  @include mobile {
+    margin-bottom: mpx(24);
+    font-size: mpx(15);
+  }
+}
+
+.actions {
+  display: flex;
+
+  @include desktop {
+    gap: dpx(20);
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: mpx(20);
+  }
+}

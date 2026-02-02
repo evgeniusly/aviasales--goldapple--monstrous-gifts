@@ -1,0 +1,204 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  @include mobile {
+    justify-content: flex-end;
+    min-height: mpx(667);
+  }
+}
+
+.content {
+  position: relative;
+
+  @include desktop {
+    display: flex;
+    justify-content: flex-end;
+    width: dpx(1920 - 177 - 177);
+  }
+}
+
+.body {
+  position: relative;
+  color: #000;
+  background-color: #ffffff;
+
+  @include desktop {
+    width: dpx(783);
+    border-radius: dpx(24);
+  }
+
+  @include mobile {
+    border-radius: mpx(16 16 0 0);
+  }
+
+  a {
+    color: #0c73fe;
+    &:hover {
+      color: #0c73fe;
+      opacity: 0.8;
+    }
+  }
+}
+
+.test {
+  @include desktop {
+    gap: dpx(24);
+    padding: dpx(48);
+    border-radius: dpx(24);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+    padding: mpx(20 20 83);
+    border-radius: mpx(16 16 0 0);
+  }
+}
+
+.counter {
+  @include desktop {
+    padding: dpx(12 16);
+    border-radius: dpx(12);
+  }
+
+  @include mobile {
+    padding: mpx(8);
+    border-radius: mpx(12);
+  }
+}
+
+.counterText {
+  h2 {
+    color: #ffffff;
+
+    @include desktop {
+      font-size: dpx(20) !important;
+    }
+
+    @include mobile {
+      font-size: mpx(14) !important;
+    }
+  }
+}
+
+.question {
+  font-weight: 500;
+  line-height: 130%;
+
+  @include desktop {
+    font-size: dpx(20);
+  }
+
+  @include mobile {
+    font-size: mpx(14);
+  }
+
+  h5 {
+    font-weight: 700;
+    line-height: 130%;
+
+    @include desktop {
+      margin-bottom: dpx(12);
+      font-size: dpx(26);
+    }
+
+    @include mobile {
+      margin-bottom: mpx(12);
+      font-size: mpx(16);
+    }
+  }
+}
+
+.answers {
+  @include desktop {
+    gap: dpx(16);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+  }
+}
+
+.answer {
+  font-weight: 500;
+  line-height: 130%;
+
+  @include desktop {
+    gap: dpx(20);
+    padding: dpx(12 32 12 12);
+    font-size: dpx(20);
+    border-radius: dpx(18);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+    padding: mpx(8 16 8 8);
+    font-size: mpx(14);
+    border-radius: mpx(12);
+  }
+
+  > div {
+    font-weight: 400;
+    line-height: 115%;
+
+    @include desktop {
+      width: dpx(40);
+      height: dpx(40);
+      border-radius: dpx(12);
+      font-size: dpx(16);
+    }
+
+    @include mobile {
+      width: mpx(24);
+      height: mpx(24);
+      border-radius: mpx(7.2);
+      font-size: mpx(16);
+    }
+  }
+
+  &[class*='_correct'] {
+    background: #7ea261;
+  }
+  &[class*='_wrong'] {
+    background: #cd494f;
+  }
+}
+
+.result {
+  @include desktop {
+    gap: dpx(16);
+  }
+}
+
+.resultTitle {
+  p {
+    @include desktop {
+      font-size: dpx(26) !important;
+      font-weight: 700;
+      line-height: 130%;
+    }
+  }
+}
+
+.resultText {
+  @include desktop {
+    font-size: dpx(20);
+    font-weight: 500;
+    line-height: 130%;
+  }
+}
+
+.button {
+  @include desktop {
+    padding: dpx(19 40);
+    border-radius: dpx(18);
+  }
+}

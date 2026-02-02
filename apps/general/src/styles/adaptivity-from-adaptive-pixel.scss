@@ -1,0 +1,14 @@
+// это используется только тут
+@use 'adaptive-pixel/dist/mixins' as *;
+
+// это прокидывается дальше
+@forward 'adaptive-pixel/dist/mixins';
+
+// тут поддержка dpx и mpx
+@function dpx($px, $factor: 1920) {
+  @return apx($px);
+}
+
+@function mpx($px, $factor: 375) {
+  @return apx($px);
+}

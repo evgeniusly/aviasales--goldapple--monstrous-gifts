@@ -1,0 +1,559 @@
+@import '../Button/Button.module';
+
+$contentWidth: 403;
+$contentWidthMob: 375;
+$contentPaddingMob: 20;
+
+.title {
+  @include desktop {
+    margin-bottom: dpx(24);
+  }
+
+  @include mobile {
+    margin-bottom: mpx(16);
+  }
+}
+
+.text {
+  @include desktop {
+    margin-bottom: dpx(22);
+  }
+
+  @include mobile {
+    margin-bottom: mpx(16);
+  }
+}
+
+.register {
+  @include desktop {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr dpx($contentWidth);
+    gap: dpx(40);
+    width: var(--content-width);
+    margin: auto;
+  }
+}
+
+// Giveaway
+.wrap {
+  --black: #000;
+  --error: #ff0c00;
+
+  position: relative;
+
+  @include desktop {
+    width: dpx($contentWidth);
+    min-height: dpx(296);
+  }
+
+  @include mobile {
+    width: mpx($contentWidthMob);
+    margin: mpx(0 $contentPaddingMob * -1);
+  }
+
+  > div {
+    @include mobile {
+      display: grid;
+      gap: mpx($contentPaddingMob * 2);
+      padding: mpx(0 $contentPaddingMob);
+      grid-template-columns: repeat(2, mpx($contentWidthMob - $contentPaddingMob * 2));
+      overflow: visible;
+    }
+  }
+
+  > div:not([class*='_subscriptionsForm']) {
+    @include mobile {
+      width: mpx($contentWidthMob * 2);
+    }
+  }
+}
+
+.giveawayStep p {
+  color: #9ea9b7;
+
+  @include mobile {
+    font-size: mpx(18) !important;
+  }
+}
+
+.giveawayEmailFormText {
+  @include desktop {
+    gap: dpx(12);
+  }
+}
+
+.giveawayEmailFormText h2,
+.giveawayShareFormTitle {
+  font-weight: 500;
+  line-height: 100%;
+
+  @include desktop {
+    font-size: dpx(26) !important;
+  }
+
+  @include mobile {
+    font-size: mpx(18) !important;
+  }
+}
+
+.giveawayEmailFormText p,
+.giveawayShareFormText {
+  @include desktop {
+    font-size: dpx(16) !important;
+  }
+
+  @include mobile {
+    font-size: mpx(13) !important;
+  }
+}
+
+// forms
+.giveawayEmailForm,
+.giveawayShareForm {
+  @include desktop {
+    border-radius: dpx(16);
+  }
+
+  @include mobile {
+    position: unset;
+    width: 100%;
+    border-radius: mpx(16);
+  }
+}
+
+// giveawayEmailForm
+.giveawayEmailForm {
+  @include desktop {
+    gap: dpx(20);
+    width: dpx($contentWidth);
+    padding: dpx(24);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+    padding: mpx(16);
+    transform: translateX(mpx(-$contentWidthMob));
+  }
+
+  &[class*='_emailActive'] {
+    @include mobile {
+      transform: translateX(0);
+    }
+  }
+}
+
+.giveawayEmailFormInput {
+  color: var(--black);
+  font-weight: 400;
+  line-height: 130%;
+  border: 1px solid var(--black);
+  background: #fff;
+
+  @include desktop {
+    font-size: dpx(16);
+    border-radius: dpx(8);
+    padding: dpx(17 19);
+  }
+
+  @include mobile {
+    font-size: mpx(14);
+    border-radius: mpx(8);
+    padding: mpx(17 19);
+  }
+
+  &:hover,
+  &:focus {
+    background: #fff;
+  }
+  &::placeholder {
+    color: #999;
+    opacity: 1;
+  }
+  &[class*='_error'] {
+    border-color: var(--error);
+    outline: none;
+  }
+}
+
+.giveawayEmailForm div[class^='_wrapper']::after,
+.giveawayEmailForm p[class*='_errorText'] {
+  display: block;
+  position: relative;
+  bottom: auto;
+  height: auto;
+  margin: 0;
+  color: #f5323e;
+  font-weight: 500;
+  line-height: 130%;
+  text-align-last: left;
+
+  @include desktop {
+    padding-left: dpx(4);
+    font-size: dpx(13);
+  }
+
+  @include mobile {
+    padding-left: mpx(4);
+    font-size: mpx(13);
+  }
+}
+
+.giveawayEmailFormCheckbox {
+  align-items: center;
+  margin: 0;
+
+  @include desktop {
+    gap: dpx(12);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+  }
+
+  span {
+    border: 1px solid var(--black) !important;
+    background-color: #fff;
+
+    @include desktop {
+      width: dpx(32);
+      height: dpx(32);
+      border-radius: dpx(5) !important;
+    }
+
+    @include mobile {
+      width: mpx(32);
+      height: mpx(32);
+      border-width: 2px;
+      border-radius: mpx(5) !important;
+    }
+  }
+
+  &[class*='_checked'] {
+    span {
+      $color: '000';
+      background-color: #fff !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='14' fill='none' viewBox='0 0 19 14'%3E%3Cpath stroke='%23#{$color}' stroke-linejoin='bevel' stroke-width='3.333' d='m2 7 5 5L17 2'/%3E%3C/svg%3E");
+
+      @include desktop {
+        background-size: dpx(19 14);
+      }
+
+      @include mobile {
+        background-size: mpx(19 14);
+      }
+    }
+  }
+
+  p {
+    @include desktop {
+      font-size: dpx(16) !important;
+    }
+
+    @include mobile {
+      font-size: mpx(13) !important;
+    }
+  }
+
+  a {
+    font-weight: 400;
+    text-decoration: underline;
+  }
+}
+
+.giveawayEmailFormCheckbox[class*='_error'] {
+  span {
+    border-color: var(--error) !important;
+  }
+  a {
+    color: var(--error);
+  }
+}
+
+.giveawayEmailFormButton {
+  --button-font-color: #fff;
+  --button-font-color-hover: #fff;
+  --button-font-color-active: #fff;
+  --button-background-color: #000;
+  --button-background-color-hover: color-mix(in srgb, var(--button-background-color), white 20%);
+  --button-background-color-active: color-mix(in srgb, var(--button-background-color), white 40%);
+
+  @include button;
+}
+
+// shares
+.giveawayShareForm {
+  @include desktop {
+    gap: dpx(20);
+    width: dpx($contentWidth);
+    padding: dpx(24);
+    left: dpx(67);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+    padding: mpx(16);
+    transform: translateX(0);
+  }
+
+  &[class*='_shareActive'] {
+    @include desktop {
+      left: 0;
+    }
+
+    @include mobile {
+      transform: translateX(mpx(-$contentWidthMob));
+    }
+  }
+}
+
+.giveawayShareFormLinkContainer {
+  @include desktop {
+    gap: dpx(24);
+  }
+
+  @include mobile {
+    justify-content: flex-start;
+    gap: mpx(16);
+  }
+}
+
+.giveawayShareFormLink {
+  img,
+  svg {
+    display: block;
+
+    @include desktop {
+      width: dpx(64);
+      height: dpx(64);
+    }
+
+    @include mobile {
+      width: mpx(40);
+      height: mpx(40);
+    }
+  }
+
+  svg {
+    overflow: visible;
+  }
+}
+
+button.giveawayShareFormLink {
+  // button tooltip
+  // you can use browser `Pause script execution` after click to debug it
+  [class*='_tooltip_'] {
+    @include desktop {
+      margin-bottom: dpx(8);
+      padding: dpx(8);
+      border-radius: dpx(10);
+    }
+
+    @include mobile {
+      margin-bottom: mpx(8);
+      padding: mpx(8);
+      border-radius: mpx(10);
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  [class*='_tooltipText'] {
+    margin: 0;
+
+    @include desktop {
+      font-size: dpx(14);
+    }
+
+    @include mobile {
+      font-size: mpx(14);
+    }
+  }
+}
+
+// .giveawayShareFormLinkContainer {
+//   > *:nth-child(1) {
+//     .giveawayShareFormLink {
+//     }
+//   }
+//   > *:nth-child(2) {
+//     .giveawayShareFormLink {
+//     }
+//   }
+//   > *:nth-child(3) {
+//     .giveawayShareFormLink {
+//     }
+//   }
+//   > *:nth-child(4) {
+//   }
+// }
+
+// SubscriptionsForm
+.subscriptionsForm {
+  gap: 0 !important;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.subscriptionsFormSubs {
+  @include desktop {
+    gap: dpx(16);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mobile {
+    gap: mpx(16);
+    grid-template-columns: 100%;
+  }
+}
+
+.subscriptionsFormSub {
+  justify-content: space-between;
+  background: #fff;
+
+  @include desktop {
+    gap: dpx(12);
+    padding: dpx(16);
+  }
+
+  @include mobile {
+    gap: mpx(12);
+    padding: mpx(16);
+    border-radius: mpx(16);
+  }
+}
+
+.subscriptionsFormTitle p {
+  @include desktop {
+    font-size: dpx(20) !important;
+  }
+
+  @include mobile {
+    font-size: mpx(20) !important;
+  }
+}
+
+.subscriptionsFormBulletPoints {
+  @include desktop {
+    gap: dpx(6);
+  }
+
+  @include mobile {
+    gap: mpx(6);
+  }
+
+  // li::before
+  //   display: none
+
+  li {
+    letter-spacing: normal;
+
+    @include desktop {
+      font-size: dpx(14) !important;
+    }
+
+    @include mobile {
+      font-size: mpx(14) !important;
+    }
+  }
+}
+
+.subscriptionsFormButton {
+  font-weight: 600;
+  line-height: normal;
+
+  @include desktop {
+    padding: dpx(8 10);
+    font-size: dpx(14);
+    cursor: pointer;
+  }
+
+  @include mobile {
+    padding: mpx(6 10 7);
+    font-size: mpx(14);
+    border-radius: mpx(8);
+  }
+}
+
+.subscriptionsFormButtonDone {
+  cursor: default !important;
+  pointer-events: none !important;
+  opacity: 0.6 !important;
+}
+
+// .subscriptionsFormSub:last-child
+//   .subscriptionsFormBulletPoints
+//     li::before
+//       color: #4BD0A0
+//   .subscriptionsFormButton
+//     background: #4BD0A0
+//     +desktop
+//       &:hover,
+//       &:active
+//         background: #4BD0A0cc
+//     +mobile
+//       background: #4BD0A0
+
+// winners
+.winnersTitle {
+  font-weight: 700;
+  line-height: normal;
+
+  @include desktop {
+    margin-bottom: dpx(12);
+    font-size: dpx(20);
+  }
+
+  @include mobile {
+    margin-bottom: mpx(12);
+    font-size: mpx(20);
+  }
+}
+
+.winnersList {
+  display: flex;
+
+  @include desktop {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: dpx(4);
+    margin-bottom: dpx(12);
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: mpx(4);
+    margin-bottom: mpx(12);
+  }
+}
+
+.winner {
+  background: rgba(255, 255, 255, 0.6);
+
+  @include desktop {
+    padding: dpx(8 12);
+    border-radius: dpx(8);
+    font-size: dpx(20);
+  }
+
+  @include mobile {
+    padding: mpx(8 12);
+    border-radius: mpx(8);
+    font-size: mpx(20);
+  }
+}
+
+.winnersActions {
+  a {
+    color: #0c73fe;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}

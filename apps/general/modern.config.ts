@@ -26,8 +26,23 @@ export default defineConfig({
       'process.env.MODERN__S3__ACCESS_KEY_ID': process.env.MODERN__S3__ACCESS_KEY_ID || '',
       'process.env.MODERN__S3__SECRET_ACCESS_KEY': process.env.MODERN__S3__SECRET_ACCESS_KEY || '',
       'process.env.MODERN__S3__BUCKET_NAME': process.env.MODERN__S3__BUCKET_NAME || 'spec-bucket',
-      'process.env.MODERN__ALTCHA__SKIP': process.env.MODERN__ALTCHA__SKIP || 'false',
-      'process.env.MODERN__ALTCHA__HEADER_NAME': process.env.MODERN__ALTCHA__HEADER_NAME || 'x-altcha-token',
+      'process.env.MODERN__USE_SMART_CAPTCHA': process.env.MODERN__USE_SMART_CAPTCHA || 'true',
+      'process.env.MODERN__SMART_CAPTCHA__SKIP': process.env.MODERN__SMART_CAPTCHA__SKIP || 'false',
+      'process.env.MODERN__SMART_CAPTCHA__SITE_KEY': process.env.MODERN__SMART_CAPTCHA__SITE_KEY || '',
+      'process.env.MODERN__SMART_CAPTCHA__SERVER_KEY': process.env.MODERN__SMART_CAPTCHA__SERVER_KEY || '',
+      'process.env.MODERN__WINNERS': process.env.MODERN__WINNERS || '',
+      'process.env.MODERN__WINNERS_LINK': process.env.MODERN__WINNERS_LINK || '',
+    },
+  },
+  resolve: {
+    alias: {
+      '@assets': './src/assets',
+      '@styles': './src/styles',
+    },
+  },
+  tools: {
+    sass: {
+      additionalData: `@use '@styles/main' as *;\n`,
     },
   },
 })

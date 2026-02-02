@@ -1,1 +1,82 @@
-// Add your custom global styles here
+:root {
+  --transition-main: 0.2s ease-in-out;
+  --transition-screen: 0.6s ease-in-out;
+
+  @include desktop {
+    --content-width: #{dpx(1824)};
+  }
+
+  @include mobile {
+    --content-width: #{mpx(330)};
+  }
+}
+
+// @font-face {
+//   font-family: "FontName";
+//   src: url("../assets/fonts/FontName.otf") format("opentype");
+//   font-weight: 400;
+// }
+
+html {
+  color: #cfcfcf;
+  background: #45424a;
+
+  @include desktop {
+    font-size: dpx(20);
+  }
+
+  @include mobile {
+    font-size: mpx(14);
+  }
+}
+
+// html {
+//   -ms-overflow-style: none;
+//   scrollbar-width: none;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
+
+html,
+button,
+input,
+textarea {
+  font-family: 'Inter', sans-serif;
+}
+
+p:not(:last-child) {
+  @include desktop {
+    margin-bottom: dpx(4);
+  }
+
+  @include mobile {
+    margin-bottom: mpx(8);
+  }
+}
+
+a {
+  color: #0c73fe;
+  text-decoration: underline;
+  transition: color var(--transition-main);
+
+  @include hover {
+    color: #0c73fe;
+    opacity: 0.8;
+  }
+}
+
+:global(.screen) {
+  transition: opacity var(--transition-screen);
+  will-change: opacity;
+}
+
+:global(.screenInvisible) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+:global(.grecaptcha-badge) {
+  visibility: hidden;
+  pointer-events: none;
+}

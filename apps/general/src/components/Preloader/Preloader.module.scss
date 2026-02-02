@@ -1,0 +1,23 @@
+.preloader {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #5798d0;
+  overflow: hidden;
+}
+
+.progressValue {
+  @include desktop {
+    font-size: dpx(34);
+  }
+  @include mobile {
+    font-size: mpx(24);
+  }
+}

@@ -1,0 +1,17 @@
+.main,
+.mainContent {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+@keyframes mainContentIn {
+  100% {
+    opacity: 1;
+  }
+}
+.mainContent {
+  opacity: 0;
+  will-change: opacity;
+  animation: mainContentIn 0.6s ease-in-out forwards;
+}

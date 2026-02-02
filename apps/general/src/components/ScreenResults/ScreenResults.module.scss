@@ -1,0 +1,22 @@
+.results {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  @include desktop {
+    padding: dpx(106 0 143);
+  }
+
+  @include mobile {
+    padding: mpx(61 20 100);
+  }
+}
+
+.content {
+  position: relative;
+  margin: 0 auto;
+
+  @include desktop {
+    width: dpx(1824);
+  }
+}
