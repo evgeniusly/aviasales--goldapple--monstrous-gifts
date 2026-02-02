@@ -1,0 +1,31 @@
+### Get subscriptions metadata about the user
+GET http://localhost:8080/api/subscriptions?email=test@test.test
+Content-Type: application/json
+
+### Register for Aviasales subscription
+POST http://localhost:8080/api/subscriptions/aviasales
+Content-Type: application/json
+
+{
+  "email": "test@test.test"
+}
+
+### Register for partner subscription
+POST http://localhost:8080/api/subscriptions/partner
+Content-Type: application/json
+
+{
+  "email": "test@test.test"
+}
+
+### Register for contest and subscription
+POST http://localhost:8080/api/subscriptions/register
+Content-Type: application/json
+
+{
+  "email": "test@test.test"
+}
+
+### Get Smart Captcha configuration
+GET http://localhost:8080/api/smart-captcha/config
+Content-Type: application/json

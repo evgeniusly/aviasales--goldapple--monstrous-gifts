@@ -1,0 +1,1 @@
+yarn branch-naming-check '^(((feat|fix|refactor)(\-CP\-[0-9]+)?\-[a-zA-Z0-9\-]+)|master)$' 'feat-CP-1234-new-layout'

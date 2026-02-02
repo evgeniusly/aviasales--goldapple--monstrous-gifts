@@ -1,0 +1,82 @@
+{
+  "name": "The Spec name",
+  "description": "Spec Description",
+  "keywords": ["spec", "marketing", "devcom", "spa"],
+  "addons": [],
+  "website": "spec-name.aviasales.ru",
+  "repository": "https://github.com/KosyanMedia/devcom-spec-blueprint",
+  "buildpacks": [
+    {
+      "url": "https://github.com/RuBAN-GT/heroku-buildpack-yarn.git"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "YARN2_SKIP_PRUNING": {
+      "description": "Skip deprecated Heroku  pruning",
+      "value": "true"
+    },
+    "NODE_AUTH_TOKEN": {
+      "description": "NPM Access key to fetch @Kosyamedia packages",
+      "value": "REDACTED"
+    },
+    "NODE_ENV": {
+      "description": "Local node environment",
+      "value": "production"
+    },
+    "MODERN__DEADLINE_DATE": {
+      "description": "Deadline date for the spec",
+      "value": "2026-01-01"
+    },
+    "MODERN__ALTCRAFT__USERNAME": {
+      "description": "Altcraft Sender credentials username",
+      "value": "x"
+    },
+    "MODERN__ALTCRAFT__PASSWORD": {
+      "description": "Altcraft Sender credentials password",
+      "value": "x"
+    },
+    "MODERN__ALTCRAFT__CAMPAIGN": {
+      "description": "Altcraft Sender campaign name",
+      "value": "special_campaign"
+    },
+    "MODERN__SMART_CAPTCHA__SITE_KEY": {
+      "description": "Smart Captcha site key for client-side",
+      "value": "REDACTED"
+    },
+    "MODERN__SMART_CAPTCHA__SERVER_KEY": {
+      "description": "Smart Captcha server key for validation",
+      "value": "REDACTED"
+    },
+    "MODERN__SMART_CAPTCHA__SKIP": {
+      "description": "Skip Smart Captcha integration",
+      "value": "false"
+    },
+    "MODERN__USE_SMART_CAPTCHA": {
+      "description": "Use Smart Captcha instead of Altcha",
+      "value": "true"
+    },
+    "MODERN__SITE_URL": {
+      "description": "Base site URL for meta tags and static resources",
+      "value": "https://spec-name.aviasales.ru"
+    },
+    "MODERN__S3__ENDPOINT": {
+      "description": "URL S3-compatible storage endpoint",
+      "value": "https://s3.your-storage.com"
+    },
+    "MODERN__S3__ACCESS_KEY_ID": {
+      "description": "S3 access key ID",
+      "value": "REDACTED"
+    },
+    "MODERN__S3__SECRET_ACCESS_KEY": {
+      "description": "S3 secret access key",
+      "value": "REDACTED"
+    },
+    "MODERN__S3__BUCKET_NAME": {
+      "description": "S3 bucket name for file storage",
+      "value": "spec-bucket"
+    }
+  }
+}
