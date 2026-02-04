@@ -42,6 +42,10 @@
       "description": "Altcraft Sender campaign name",
       "value": "special_campaign"
     },
+    "MODERN__SMART_CAPTCHA__HEADER_NAME": {
+      "description": "Smart Captcha request header",
+      "value": "x-smart-captcha-token"
+    },
     "MODERN__SMART_CAPTCHA__SITE_KEY": {
       "description": "Smart Captcha site key for client-side",
       "value": "REDACTED"

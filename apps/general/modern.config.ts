@@ -30,6 +30,8 @@ export default defineConfig({
       'process.env.MODERN__SMART_CAPTCHA__SKIP': process.env.MODERN__SMART_CAPTCHA__SKIP || 'false',
       'process.env.MODERN__SMART_CAPTCHA__SITE_KEY': process.env.MODERN__SMART_CAPTCHA__SITE_KEY || '',
       'process.env.MODERN__SMART_CAPTCHA__SERVER_KEY': process.env.MODERN__SMART_CAPTCHA__SERVER_KEY || '',
+      'process.env.MODERN__SMART_CAPTCHA__HEADER_NAME':
+        process.env.MODERN__SMART_CAPTCHA__HEADER_NAME || 'x-smart-captcha-token',
       'process.env.MODERN__WINNERS': process.env.MODERN__WINNERS || '',
       'process.env.MODERN__WINNERS_LINK': process.env.MODERN__WINNERS_LINK || '',
     },
