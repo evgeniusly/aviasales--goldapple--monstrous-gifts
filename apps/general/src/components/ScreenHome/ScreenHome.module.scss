@@ -18,42 +18,176 @@
   }
 }
 
-.content {
-  position: relative;
+.homeParticlesFar {
+  position: absolute;
+  margin: auto;
 
   @include desktop {
-    width: dpx(1620);
-  }
-
-  @include mobile {
-    padding: mpx(80 20);
+    left: dpx(74);
+    top: dpx(144);
+    right: dpx(92);
+    bottom: dpx(202);
+    width: dpx(1754);
+    height: dpx(634);
   }
 }
 
-.body {
+.homeParticlesClose {
+  position: absolute;
+  margin: auto;
+
   @include desktop {
-    width: dpx(660);
+    left: dpx(41);
+    top: dpx(207);
+    right: dpx(20);
+    bottom: dpx(271);
+    width: dpx(1859);
+    height: dpx(502);
+  }
+}
+
+.homeGifts {
+  position: absolute;
+  margin: auto;
+
+  @include desktop {
+    left: dpx(-60);
+    top: dpx(629);
+    right: dpx(0);
+    bottom: dpx(-185);
+    width: dpx(1980);
+    height: dpx(536);
+  }
+}
+
+.person {
+  position: absolute;
+  margin: auto;
+
+  @include desktop {
+    left: dpx(422);
+    top: dpx(117);
+    right: dpx(1180);
+    bottom: dpx(547);
+    width: dpx(318);
+    height: dpx(316);
+  }
+}
+
+.personHolder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    // transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes homePersonHandAnim {
+  0%,
+  70%,
+  100% {
+    transform: none;
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+}
+.homePersonHand {
+  transform-origin: 50% 20%;
+  animation: homePersonHandAnim 3s ease-in-out infinite;
+}
+
+.body {
+  position: relative;
+  text-align: center;
+
+  @include desktop {
+    width: dpx(592);
   }
 }
 
 .title {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
 
   @include desktop {
     margin-bottom: dpx(40);
-    font-size: dpx(64);
   }
 
   @include mobile {
     margin-bottom: mpx(16);
-    font-size: mpx(28);
+  }
+}
+
+.titleTopWrap {
+  position: relative;
+  margin: auto;
+  transform: rotate(-3deg);
+
+  @include desktop {
+    width: dpx(501);
+  }
+}
+
+.homeTitleBant {
+  position: absolute;
+
+  @include desktop {
+    left: dpx(205.69);
+    top: dpx(-82.99);
+    width: dpx(133);
+    height: dpx(105);
+  }
+}
+
+.titleTop {
+  position: relative;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  line-height: 96%;
+  background: var(--Black, #161618);
+
+  @include desktop {
+    height: dpx(99);
+    margin-bottom: dpx(8);
+    padding: dpx(10 32);
+    font-size: dpx(96);
+    border-radius: dpx(64);
+  }
+}
+
+.titleMid {
+  line-height: 96%;
+
+  @include desktop {
+    font-size: dpx(160);
+  }
+}
+
+.titleBot {
+  line-height: 96%;
+
+  @include desktop {
+    font-size: dpx(96);
   }
 }
 
 .text {
   @include desktop {
-    margin-bottom: dpx(72);
-    font-size: dpx(26);
+    margin-bottom: dpx(80);
+    font-size: dpx(24);
   }
 
   @include mobile {
@@ -63,10 +197,11 @@
 }
 
 .actions {
-  display: flex;
+  display: grid;
 
   @include desktop {
-    gap: dpx(20);
+    grid-template-columns: repeat(2, dpx(288));
+    gap: dpx(16);
   }
 
   @include mobile {

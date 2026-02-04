@@ -7,7 +7,7 @@ import assetPreloader from '~/utils/assetPreloader'
 
 import { CookiesAlert } from '../CookiesAlert'
 import { Header } from '../Header'
-import { Preloader } from '../Preloader/Preloader'
+import { Preloader } from '../Preloader'
 import { ScreenGame } from '../ScreenGame'
 import { ScreenHome } from '../ScreenHome'
 import { ScreenResults } from '../ScreenResults'
@@ -94,6 +94,11 @@ export const Main: React.FC<IMain> = ({ screen: screenFromProps }) => {
 
       {isReady && (
         <div className={classes.mainContent}>
+          <div className={classes.background}>
+            <div className={classes.backLine1}></div>
+            <div className={classes.backLine2}></div>
+          </div>
+
           {screenId === 'home' && <ScreenHome />}
           {screenId === 'game' && <ScreenGame />}
           {screenId === 'results' && <ScreenResults />}

@@ -3,7 +3,7 @@ import React, { useCallback, useMemo } from 'react'
 
 import classes from './Button.module.scss'
 
-type TMod = 'outline'
+type TMod = 'outline' | 'yellow'
 
 interface IButtonProps {
   children: React.ReactNode

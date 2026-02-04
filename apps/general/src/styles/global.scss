@@ -11,15 +11,15 @@
   }
 }
 
-// @font-face {
-//   font-family: "FontName";
-//   src: url("../assets/fonts/FontName.otf") format("opentype");
-//   font-weight: 400;
-// }
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../assets/fonts/BebasNeue-Bold.otf') format('opentype');
+  font-weight: 700;
+}
 
 html {
-  color: #cfcfcf;
-  background: #45424a;
+  color: #161618;
+  background: #b2def7;
 
   @include desktop {
     font-size: dpx(20);

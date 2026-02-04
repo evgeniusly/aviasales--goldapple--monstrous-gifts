@@ -27,9 +27,9 @@ export const Header: React.FC = () => {
             <img src={aviasalesLogo} className={classes.aviasalesLogoImg} alt="aviasales" />
           </a>
 
-          <svg className={classes.cross} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 2L14 14" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M14 2L2 14" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <svg className={classes.cross} viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.801025 0.799988L8.80107 8.80004" stroke="#161618" strokeWidth="1.6" strokeLinecap="round" />
+            <path d="M8.80005 0.799988L0.799999 8.80004" stroke="#161618" strokeWidth="1.6" strokeLinecap="round" />
           </svg>
 
           <a className={classes.logoLink} href={links.client} target="_blank">

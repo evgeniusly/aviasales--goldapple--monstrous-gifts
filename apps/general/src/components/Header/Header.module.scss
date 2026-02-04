@@ -14,8 +14,8 @@
   position: relative;
 
   @include desktop {
-    padding-top: dpx(32);
-    width: dpx(1805);
+    padding: dpx(21 42 0);
+    width: dpx(1920);
   }
 
   @include mobile {
@@ -30,7 +30,7 @@
   align-items: center;
 
   @include desktop {
-    gap: dpx(32);
+    gap: dpx(16);
   }
 
   @include mobile {
@@ -53,8 +53,8 @@
   display: block;
 
   @include desktop {
-    width: dpx(192);
-    height: dpx(40);
+    width: dpx(135);
+    height: dpx(28);
   }
 
   @include mobile {
@@ -67,8 +67,8 @@
   display: block;
 
   @include desktop {
-    width: dpx(192);
-    height: dpx(40);
+    width: dpx(202);
+    height: dpx(28);
   }
 
   @include mobile {
@@ -81,8 +81,8 @@
   display: block;
 
   @include desktop {
-    width: dpx(16);
-    height: dpx(16);
+    width: dpx(10);
+    height: dpx(10);
   }
 
   @include mobile {
@@ -93,17 +93,21 @@
 
 .rulesLink {
   display: block;
-  color: #fff;
+  color: #161618;
   font-weight: 400;
   line-height: 130%;
   text-decoration: none;
 
   @include desktop {
+    padding: dpx(6 16);
     font-size: dpx(16);
+    border: dpx(1) solid var(--Black, #161618);
+    border-radius: dpx(67);
 
     &:hover {
-      color: #fff;
-      text-decoration: underline;
+      color: #161618;
+      text-decoration: none;
+      opacity: 0.8;
     }
   }
 

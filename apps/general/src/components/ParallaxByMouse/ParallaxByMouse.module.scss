@@ -1,0 +1,16 @@
+.parallaxByMouse {
+  will-change: transform;
+  transition: transform 0.05s linear;
+
+  &:not(.isRelative) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.isRelative {
+  position: relative;
+}

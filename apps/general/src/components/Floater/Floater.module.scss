@@ -1,0 +1,50 @@
+@keyframes floatYAnim {
+  0%,
+  100% {
+    transform: translateY(apx(var(--range, 10)));
+  }
+  50% {
+    transform: translateY(apx(calc(var(--range, 10) * -1)));
+  }
+}
+@keyframes floatXAnim {
+  0%,
+  100% {
+    transform: translateX(apx(var(--range, 10)));
+  }
+  50% {
+    transform: translateX(apx(calc(var(--range, 10) * -1)));
+  }
+}
+.floater {
+  position: relative;
+}
+
+.vertical,
+.horizontal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical {
+  animation: floatYAnim 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.horizontal {
+  animation: floatXAnim 4s ease-in-out infinite;
+  will-change: transform;
+
+  > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}

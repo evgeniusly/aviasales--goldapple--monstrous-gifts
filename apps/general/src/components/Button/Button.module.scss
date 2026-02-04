@@ -5,6 +5,8 @@
   align-self: flex-start;
   flex: 0 0 auto;
   color: var(--button-font-color);
+  font-weight: 600;
+  line-height: 130%;
   text-decoration: none;
   white-space: nowrap;
   background: var(--button-background-color);
@@ -15,9 +17,9 @@
   @include desktop {
     gap: dpx(4);
     padding: dpx(16 24);
-    height: dpx(64);
-    font-size: dpx(24);
-    border-radius: dpx(12);
+    height: dpx(72);
+    font-size: dpx(22);
+    border-radius: dpx(40);
     cursor: pointer;
 
     &:hover {
@@ -46,9 +48,9 @@ a.button {
   --button-font-color: #fff;
   --button-font-color-hover: #fff;
   --button-font-color-active: #fff;
-  --button-background-color: #000;
-  --button-background-color-hover: color-mix(in srgb, var(--button-background-color), white 20%);
-  --button-background-color-active: color-mix(in srgb, var(--button-background-color), white 40%);
+  --button-background-color: #161618;
+  --button-background-color-hover: #303035;
+  --button-background-color-active: #303035;
   @include button;
 }
 
@@ -82,5 +84,11 @@ a.button {
 .disabled,
 a.disabled {
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+.yellow,
+a.yellow {
+  color: #161618;
+  background: var(--Lime, #efff91);
 }
