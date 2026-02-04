@@ -22,7 +22,7 @@ export const CookiesAlert: React.FC = () => {
     ? createPortal(
         <div className={classNames(classes.cookies, screenId === 'game' && classes.contentInverted)}>
           <div className={classes.text}>
-            Мы&nbsp;используем куки&nbsp;&mdash; про них можно почитать{' '}
+            Мы&nbsp;используем куки и&nbsp;SmartCaptcha, подробности&nbsp;&mdash;{' '}
             <a href={links.privacy} target="_blank">
               в&nbsp;правилах
             </a>
