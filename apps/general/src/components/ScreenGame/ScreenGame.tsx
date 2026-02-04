@@ -5,6 +5,7 @@ import gameParticlesClose from '@assets/images/gameParticlesClose.png'
 import gameParticlesFar from '@assets/images/gameParticlesFar.png'
 import loaderAnim from '@assets/images/loader.webp'
 import loaderParticles from '@assets/images/loaderParticles.png'
+import personIngame from '@assets/images/personIngame80.webp'
 
 import { answerLimit, preloads, questions } from '~/data'
 import { LOADER_TEXT_DURATION_MS, loaderTexts } from '~/data/loader'
@@ -113,20 +114,11 @@ export const ScreenGame: React.FC = () => {
             <img className={classes.gameParticlesClose} src={gameParticlesClose} alt="" draggable="false" />
           </ParallaxByMouse>
 
+          <img className={classes.person} src={personIngame} alt="" draggable="false" />
+
           <div className={classes.content}>
             <div className={classes.body}>
               <div className={classes.progressSection}>
-                {/* <svg className={classes.progressBar} viewBox="0 0 440 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M6 0.5H434C437.038 0.5 439.5 2.96243 439.5 6C439.5 9.03757 437.038 11.5 434 11.5H6C2.96243 11.5 0.5 9.03757 0.5 6C0.5 2.96243 2.96243 0.5 6 0.5Z"
-                stroke="#161618"
-              />
-              <path
-                d="M0 6C0 2.68629 2.68629 0 6 0H170C173.314 0 176 2.68629 176 6C176 9.31371 173.314 12 170 12H6C2.6863 12 0 9.31371 0 6Z"
-                fill="#161618"
-              />
-            </svg> */}
-
                 <div className={classes.progressBar}>
                   <div
                     className={classes.progressBarValue}

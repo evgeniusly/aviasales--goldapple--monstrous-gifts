@@ -91,4 +91,11 @@ a.disabled {
 a.yellow {
   color: #161618;
   background: var(--Lime, #efff91);
+
+  @include desktop {
+    &:hover {
+      color: #161618;
+      background: #f6ffc3;
+    }
+  }
 }

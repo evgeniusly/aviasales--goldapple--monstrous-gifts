@@ -46,6 +46,20 @@
   }
 }
 
+.person {
+  position: absolute;
+  margin: auto;
+
+  @include desktop {
+    left: dpx(1173);
+    top: dpx(274);
+    right: dpx(143);
+    bottom: dpx(221);
+    width: dpx(604);
+    height: dpx(485);
+  }
+}
+
 .content {
   position: relative;
 
