@@ -27,6 +27,7 @@ export const useGameStore = create<IGameStore>()(
 
     setAnswerIds: (ids): void => {
       set((state) => {
+        state.isTested = true
         state.anwerIds = [...ids]
       })
     },

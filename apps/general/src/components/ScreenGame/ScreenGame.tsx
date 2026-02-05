@@ -10,6 +10,7 @@ import personIngame from '@assets/images/personIngame80.webp'
 import { answerLimit, preloads, questions } from '~/data'
 import { LOADER_TEXT_DURATION_MS, loaderTexts } from '~/data/loader'
 import { useAppStore } from '~/store/appStore'
+import { useGameStore } from '~/store/gameStore'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -22,6 +23,7 @@ export const ScreenGame: React.FC = () => {
   const isScreenInvisible = useAppStore((state) => state.isScreenInvisible)
   const deskMob = useAppStore((store) => store.deskMob)
   const gotoResults = useAppStore((store) => store.gotoResults)
+  const setAnswerIds = useGameStore((store) => store.setAnswerIds)
 
   const [answerCount, setAnswerCount] = useState(0)
   const [selectedIds, setSelectedIds] = useState<number[]>([])
@@ -68,23 +70,17 @@ export const ScreenGame: React.FC = () => {
 
     setIsEnding(true)
 
-    // let isLoaderDone = false
     loaderTimerRef.current = setInterval(() => {
-      // if (isLoaderDone) {
-      //   clearInterval(loaderTimerRef.current)
-      //   gotoResults()
-      //   return
-      // }
       loaderTitleId.current += 1
       if (loaderTexts[loaderTitleId.current]) {
         setLoaderTextId(loaderTitleId.current)
       } else {
-        // isLoaderDone = true
         clearInterval(loaderTimerRef.current)
+        setAnswerIds([...selectedIds])
         gotoResults()
       }
     }, LOADER_TEXT_DURATION_MS)
-  }, [answerCount, answerLimit])
+  }, [answerCount, answerLimit, selectedIds])
 
   useEffect(() => {
     if (deviceType === 'unknown') return

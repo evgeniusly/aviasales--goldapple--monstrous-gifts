@@ -4,7 +4,7 @@
   min-height: 100vh;
 
   @include desktop {
-    padding: dpx(106 0 143);
+    padding: dpx(148 0 143);
   }
 
   @include mobile {
@@ -18,5 +18,248 @@
 
   @include desktop {
     width: dpx(1824);
+  }
+}
+
+.resultTitle {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 115%;
+  text-align: center;
+
+  @include desktop {
+    margin-bottom: dpx(48);
+    font-size: dpx(64);
+  }
+}
+
+//
+.resultCards {
+  --slider-transition-duration: 0.4s;
+  --slider-transition-func: cubic-bezier(0.3, 0.6, 0.5, 1.2);
+
+  position: relative;
+  user-select: none;
+
+  @include desktop {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    height: dpx(782);
+    pointer-events: none;
+  }
+}
+
+.resultCardWrap {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  transition: transform var(--slider-transition-duration) var(--slider-transition-func);
+  will-change: transform;
+  backface-visibility: hidden;
+
+  @include desktop {
+    width: dpx(392);
+    pointer-events: all;
+
+    &-Left {
+      transform: translateZ(-360px) translate(-132%, -6%);
+    }
+    &-Right {
+      transform: translateZ(-360px) translate(132%, -6%);
+    }
+  }
+}
+
+.resultCard {
+  position: relative;
+  background: var(--White, #fff);
+
+  @include desktop {
+    height: dpx(600);
+    padding: dpx(28 40);
+    border-radius: dpx(40);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    cursor: pointer;
+  }
+}
+
+.resultCardNumber {
+  position: absolute;
+  width: fit-content;
+  color: #ffffff;
+  background: var(--Black, #161618);
+
+  @include desktop {
+    left: dpx(40);
+    top: dpx(28);
+    padding: dpx(5 12);
+    font-size: dpx(16);
+    border-radius: dpx(16);
+  }
+}
+
+.resultCardImage {
+  display: block;
+  object-fit: contain;
+
+  @include desktop {
+    height: dpx(348);
+    margin-bottom: dpx(12);
+  }
+}
+
+.resultCardTitle {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 115%;
+
+  @include desktop {
+    margin-bottom: dpx(12);
+    font-size: dpx(34);
+  }
+}
+
+.resultCardForWho {
+  line-height: 130%;
+
+  @include desktop {
+    margin-bottom: dpx(12);
+    font-size: dpx(14);
+  }
+
+  b {
+    font-weight: 700;
+  }
+}
+
+.resultCardText {
+  font-weight: 500;
+  line-height: 140%;
+
+  @include desktop {
+    font-size: dpx(16);
+  }
+}
+
+.resultCardPromoWrap {
+  position: relative;
+  transition: var(--slider-transition-duration) var(--slider-transition-func);
+  transition-property: opacity, transform;
+}
+
+.resultCardWrap:not(.resultCardWrapActive) {
+  .resultCardPromoWrap {
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+  }
+}
+
+.cardPromoLeft,
+.cardPromoRight {
+  display: block;
+  position: absolute;
+}
+.cardPromoLeft {
+  @include desktop {
+    left: dpx(-57);
+    top: dpx(-3.5);
+    width: dpx(65);
+    height: dpx(80);
+  }
+}
+.cardPromoRight {
+  @include desktop {
+    right: dpx(-52);
+    bottom: dpx(15.5);
+    width: dpx(64);
+    height: dpx(80);
+  }
+}
+
+.resultCardPromo {
+  display: grid;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  line-height: 140%;
+  background: var(--Lime, #efff91);
+
+  @include desktop {
+    min-height: dpx(166);
+    margin-top: dpx(16);
+    padding: dpx(12 40);
+    font-size: dpx(16);
+    border-radius: dpx(40);
+  }
+}
+
+.buttonNext,
+.buttonPrev {
+  position: absolute;
+  left: 50%;
+
+  @include desktop {
+    top: dpx(272);
+    width: dpx(56);
+    height: dpx(56);
+    cursor: pointer;
+    pointer-events: all;
+  }
+}
+.buttonNext {
+  @include desktop {
+    transform: translateX(calc(-50% + #{dpx(592)}));
+  }
+}
+.buttonPrev {
+  @include desktop {
+    transform: translateX(calc(-50% - #{dpx(592)})) rotate(180deg);
+  }
+}
+
+//
+.resultPaginator {
+  display: flex;
+  justify-content: center;
+
+  @include desktop {
+    gap: dpx(8);
+    margin-top: dpx(24);
+  }
+}
+
+.resultPaginatorItem {
+  overflow: visible;
+
+  @include desktop {
+    width: dpx(16);
+    height: dpx(16);
+    cursor: pointer;
+  }
+
+  circle {
+    transition: 0.4s ease-in-out;
+    transition-property: stroke-width, r;
+  }
+}
+
+.resultPaginatorItemSelected {
+  circle {
+    stroke-width: 9;
+    r: 4;
+  }
+}
+
+//
+.resultActions {
+  display: grid;
+  margin: auto;
+
+  @include desktop {
+    width: dpx(275);
+    margin-top: dpx(24);
   }
 }
