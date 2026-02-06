@@ -19,6 +19,7 @@
 
 html {
   color: #161618;
+  line-height: 130%;
   background: #b2def7;
 
   @include desktop {
@@ -56,12 +57,12 @@ p:not(:last-child) {
 }
 
 a {
-  color: #0c73fe;
+  color: #161618;
   text-decoration: underline;
   transition: color var(--transition-main);
 
   @include hover {
-    color: #0c73fe;
+    color: #161618;
     opacity: 0.8;
   }
 }

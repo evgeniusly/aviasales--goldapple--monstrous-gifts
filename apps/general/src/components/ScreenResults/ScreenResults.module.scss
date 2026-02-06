@@ -4,7 +4,7 @@
   min-height: 100vh;
 
   @include desktop {
-    padding: dpx(148 0 143);
+    padding: dpx(148 0 120);
   }
 
   @include mobile {
@@ -47,10 +47,13 @@
     height: dpx(782);
     pointer-events: none;
   }
+
+  .resultCardWrap {
+    position: absolute;
+  }
 }
 
 .resultCardWrap {
-  position: absolute;
   margin: auto;
   left: 0;
   right: 0;
@@ -64,9 +67,15 @@
 
     &-Left {
       transform: translateZ(-360px) translate(-132%, -6%);
+      .resultCard {
+        cursor: pointer !important;
+      }
     }
     &-Right {
       transform: translateZ(-360px) translate(132%, -6%);
+      .resultCard {
+        cursor: pointer !important;
+      }
     }
   }
 }
@@ -81,7 +90,6 @@
     border-radius: dpx(40);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
-    cursor: pointer;
   }
 }
 
@@ -183,16 +191,26 @@
   display: grid;
   align-items: center;
   position: relative;
-  font-weight: 500;
-  line-height: 140%;
   background: var(--Lime, #efff91);
 
   @include desktop {
     min-height: dpx(166);
     margin-top: dpx(16);
     padding: dpx(12 40);
-    font-size: dpx(16);
     border-radius: dpx(40);
+  }
+}
+
+.resultCardPromoText {
+  font-weight: 500;
+  line-height: 140%;
+
+  @include desktop {
+    font-size: dpx(16);
+  }
+
+  a {
+    font-weight: 600;
   }
 }
 
@@ -205,8 +223,14 @@
     top: dpx(272);
     width: dpx(56);
     height: dpx(56);
-    cursor: pointer;
     pointer-events: all;
+    cursor: pointer;
+    transition: opacity var(--transition-main);
+    will-change: opacity;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 .buttonNext {
@@ -238,6 +262,12 @@
     width: dpx(16);
     height: dpx(16);
     cursor: pointer;
+    transition: opacity var(--transition-main);
+    will-change: opacity;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   circle {
@@ -247,6 +277,8 @@
 }
 
 .resultPaginatorItemSelected {
+  pointer-events: none;
+
   circle {
     stroke-width: 9;
     r: 4;
@@ -261,5 +293,73 @@
   @include desktop {
     width: dpx(275);
     margin-top: dpx(24);
+  }
+}
+
+.resultEmptyActions {
+  @include desktop {
+    width: dpx(392);
+  }
+}
+
+// PROMO
+.promoWrap {
+  @include desktop {
+    width: dpx(1354);
+    margin: dpx(64) auto;
+    padding: dpx(112 692 94 153);
+  }
+}
+
+.promoTitle {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 115%;
+
+  @include desktop {
+    margin-bottom: dpx(40);
+    font-size: dpx(64);
+  }
+}
+
+.promoText {
+  p:not(:last-child) {
+    @include desktop {
+      margin-bottom: dpx(20 * 1.3);
+    }
+  }
+}
+
+.promoActions {
+  display: grid;
+
+  @include desktop {
+    width: dpx(322);
+    margin-top: dpx(40);
+  }
+}
+
+//
+.bottom {
+  @include desktop {
+    width: dpx(1048);
+    margin: dpx(96) auto 0;
+  }
+}
+
+//
+.legal {
+  @include desktop {
+    width: dpx(1048);
+    margin: dpx(64) auto 0;
+    padding-top: dpx(16);
+    border-top: dpx(1) solid var(--Black, #161618);
+  }
+
+  p {
+    @include desktop {
+      font-size: dpx(14);
+      opacity: 0.7;
+    }
   }
 }

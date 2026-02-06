@@ -15,30 +15,24 @@ export const giveawayTexts: {
   winners: Pick<GiveawayProps, 'winnersTitle' | 'winnersLinkText'> & { title: React.ReactNode }
 } = {
   registration: {
-    title: <>Осталось выиграть билеты</>,
-    text: <>Мы&nbsp;как раз разыгрываем два путешествия до&nbsp;70&nbsp;000&nbsp;₽</>,
+    title: <>Дарим вам розыгрыш путешествия</>,
+    text: <>Можно выиграть два авиабилета до&nbsp;40&nbsp;000&nbsp;₽ **</>,
   },
 
   registered: {
-    subscribedTitle: <>Поздравляем, вы&nbsp;участвуете в&nbsp;розыгрыше!</>,
+    subscribedTitle: <>Ура, вы&nbsp;участвуете в&nbsp;розыгрыше!</>,
     subscribedText: (
-      <>
-        Результаты опубликуем до&nbsp;NN.NN.NN в&nbsp;нашем{' '}
-        <a href={links.vk} target="_blank">
-          сообществе в&nbsp;VK
-        </a>
-        , а&nbsp;победителям напишем на&nbsp;почту
-      </>
+      <>Результаты опубликуем до&nbsp;NN.NN.NN на&nbsp;этой странице, а&nbsp;победителям напишем на&nbsp;почту.</>
     ),
   },
 
   over: {
-    giveawayOverTitle: <>Розыгрыш путешествий кончился</>,
-    giveawayOverText: <>Подпишитесь на&nbsp;рассылки, чтобы не&nbsp;пропустить другие розыгрыши.</>,
+    giveawayOverTitle: <>Уже выбираем победителей</>,
+    giveawayOverText: <>Розыгрыш закончился, результаты опубликуем до&nbsp;NN.NN.NN на&nbsp;этой странице</>,
   },
 
   winners: {
-    title: <>А&nbsp;розыгрыш закончился</>,
+    title: <>Путешествия уже разыграли</>,
     winnersTitle: 'Как выбирали победителя',
     winnersLinkText: 'Как выбирали победителя',
   },
@@ -46,7 +40,7 @@ export const giveawayTexts: {
 
 export const emailFormData: Omit<EmailFormProps, 'onSubmit'> = {
   title: 'Оставьте почту',
-  text: 'Чтобы мы поздравили лично',
+  text: 'На неё напишем, если выиграете',
   emailErrorText: 'Похоже, в адрес почты закралась ошибка',
   userDataText: (
     <>
@@ -58,17 +52,18 @@ export const emailFormData: Omit<EmailFormProps, 'onSubmit'> = {
   ),
   checkboxes: [
     <>
-      Соглашаюсь c&nbsp;
+      Соглашаюсь на&nbsp;
       <a href={links.privacy} target="_blank">
-        обработкой пользовательских данных
-      </a>
+        обработку персональных данных
+      </a>{' '}
+      и&nbsp;получение информационных сообщений согласно политике обработки персональных данных
     </>,
   ],
 }
 
 export const shareFormData: Omit<ShareFormProps, 'onShare'> = {
   title: 'Поделитесь с друзьями',
-  text: 'Вдруг сможете полететь вместе',
+  text: 'Чтобы и они могли выбрать вам подарок',
   linksInfo: [
     {
       [SharingType.Vk]: {

@@ -4,8 +4,9 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import buttonNextRound from '@assets/images/buttonNextRound.svg?url'
 import cardPromoLeft from '@assets/images/cardPromoLeft.png'
 import cardPromoRight from '@assets/images/cardPromoRight.png'
+import resEmpty from '@assets/images/resEmpty.png'
 
-import { preloads, questions } from '~/data'
+import { links, preloads, questions } from '~/data'
 import { useAppStore } from '~/store/appStore'
 import { useGameStore } from '~/store/gameStore'
 import assetPreloader from '~/utils/assetPreloader'
@@ -18,6 +19,7 @@ import classes from './ScreenResults.module.scss'
 export const ScreenResults: React.FC = () => {
   const isScreenInvisible = useAppStore((state) => state.isScreenInvisible)
   const deviceType = useAppStore((state) => state.deviceType)
+  const isDeadlined = useAppStore((state) => state.isDeadlined)
   const deskMob = useAppStore((state) => state.deskMob)
   const gotoGame = useAppStore((state) => state.gotoGame)
   const isTested = useGameStore((state) => state.isTested)
@@ -84,7 +86,9 @@ export const ScreenResults: React.FC = () => {
                     <div className={classes.resultCardPromoWrap}>
                       <img className={classes.cardPromoLeft} src={cardPromoLeft} alt="" draggable="false" />
                       <img className={classes.cardPromoRight} src={cardPromoRight} alt="" draggable="false" />
-                      <div className={classes.resultCardPromo}>{result.promo}</div>
+                      <div className={classes.resultCardPromo}>
+                        <div className={classes.resultCardPromoText}>{result.promo}</div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -109,17 +113,75 @@ export const ScreenResults: React.FC = () => {
                   </svg>
                 ))}
               </div>
-
-              <div className={classes.resultActions}>
-                <Button onClick={onRestartClick}>Выбрать другие</Button>
-              </div>
             </>
           )}
+
+          {!isTestedLocal && (
+            <div className={classes.resultEmptyWrap}>
+              <div className={classes.resultCardWrap}>
+                <div className={classes.resultCard}>
+                  <img className={classes.resultCardImage} src={resEmpty} alt="" draggable="false" />
+                  <div className={classes.resultCardNumber}>Чудовищный подарок №0</div>
+                  <div className={classes.resultCardTitle}>Целое ничего</div>
+                  <div className={classes.resultCardForWho}>
+                    <b>Кому:</b> непонятно кому
+                  </div>
+                  <div className={classes.resultCardText}>
+                    Вы&nbsp;перешли сразу к&nbsp;розыгрышу, и&nbsp;ваши близкие остались без ужасных подарков.
+                    Но&nbsp;подобрать их&nbsp;ещё не&nbsp;поздно!
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className={classNames(classes.resultActions, !isTestedLocal && classes.resultEmptyActions)}>
+            <Button onClick={onRestartClick}>{isTestedLocal ? 'Выбрать другие' : 'Подобрать подарки'}</Button>
+          </div>
         </div>
+
+        {!isDeadlined && (
+          <div className={classes.promoWrap}>
+            <div className={classes.promoBody}>
+              <div className={classes.promoTitle}>А&nbsp;где искать хорошие подарки?</div>
+              <div className={classes.promoText}>
+                <p>
+                  Тонко намекаем: в&nbsp;&laquo;Золотом Яблоке&raquo;. Категорий товаров там больше, чем кажется: есть
+                  и&nbsp;техника, и&nbsp;декор, и&nbsp;одежда. А&nbsp;выбранные подарки доставят домой, в&nbsp;офис,
+                  пункт выдачи или ближайший магазин&nbsp;&mdash; куда захотите.
+                </p>
+                <p>
+                  Начать выбирать подарки можно с&nbsp;подборки, которую команда &laquo;Золотого Яблока&raquo; сделала
+                  специально для этого проекта:
+                </p>
+              </div>
+              <div className={classes.promoActions}>
+                <Button>Смотреть подборку</Button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className={classes.bottom}>
           <GiveawayDefault />
         </div>
+
+        {!isDeadlined && (
+          <div className={classes.legal}>
+            <p>
+              *Размер скидки зависит от&nbsp;суммы заказа, промокод действует до&nbsp;NN.NN.NN. Подробности&nbsp;&mdash;{' '}
+              <a href={links.rules} target="_blank">
+                в&nbsp;правилах
+              </a>
+            </p>
+            <p>
+              **Разыгрываются баллы на&nbsp;покупку авиабилетов у&nbsp;Авиасейлс, подробности&nbsp;&mdash;{' '}
+              <a href={links.rules} target="_blank">
+                в&nbsp;правилах
+              </a>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   )

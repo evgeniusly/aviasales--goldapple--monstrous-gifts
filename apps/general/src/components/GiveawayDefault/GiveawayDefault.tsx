@@ -1,9 +1,8 @@
 import React, { useRef } from 'react'
 
+import giveawayPerson from '@assets/images/giveawayPerson.png'
 import { Registration, useGiveaway } from '@kosyanmedia/devcom-spec-uikit/dist/collections'
 import { SmartCaptcha } from '@kosyanmedia/devcom-spec-uikit/dist/elements'
-import { SubscriptionsForm } from '@kosyanmedia/devcom-spec-uikit/dist/modules'
-import { SubscriptionProps } from '@kosyanmedia/devcom-spec-uikit/dist/modules/SubscriptionsForm/Subscription'
 
 import { emailFormData, giveawayTexts, shareFormData, subscriptionFormData } from '~/data'
 import { winnersLink, winnersList } from '~/defs'
@@ -15,63 +14,12 @@ export const GiveawayDefault: React.FC = () => {
   const isDeadlined = useAppStore((state) => state.isDeadlined)
 
   const captchaRef = useRef<{ value: string | null }>(null)
-  // const altchaRef = useRef<{ value: string | null }>(null)
 
-  // Giveaway statuses from GiveawayContext
-  // const { email, hasShared, isSubscribedAviasales, isSubscribedPartner } = useContext(GiveawayContext)
-
-  const { state, networkError, aviasalesInfo, partnerInfo, handleRegister, handleShare } = useGiveaway({
+  const { state, networkError, handleRegister, handleShare } = useGiveaway({
     isDevelopment: process.env.NODE_ENV === 'development',
     captchaRef: captchaRef,
     subscriptionFormData: subscriptionFormData,
-    // shouldSkipShareForm: false,
-    // shouldControlSubscriptions: false,
-    // onRegister: process.env.NODE_ENV === 'development' ? (): Promise<void> => Promise.resolve() : undefined,
-    // altchaRef: process.env.NODE_ENV === 'development' ? undefined : altchaRef,
   })
-
-  // const [SubmitButtonTwin, setSubmitButtonTwin] = useState<React.ReactPortal | null>(null)
-  // useEffect(() => {
-  //   const emailFormElem = document.getElementsByClassName(classes.giveawayEmailForm)[0] as HTMLFormElement
-  //   if (!emailFormElem) return
-
-  //   setSubmitButtonTwin(() => {
-  //     if (!emailFormElem) return null
-  //     return createPortal(
-  //       <div className={classes.buttonTwinWrap}>
-  //         <Button
-  //           onClick={() => {
-  //             const realBtn = document.getElementsByClassName(classes.giveawayEmailFormButton)[0] as HTMLButtonElement
-  //             if (!realBtn) return
-  //             realBtn.click()
-  //           }}
-  //         >
-  //           Отправить
-  //         </Button>
-  //       </div>,
-  //       emailFormElem,
-  //     )
-  //   })
-  // }, [state.currentStep])
-
-  // send status on update
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const event = new CustomEvent('giveawayStatus', { detail: state.currentStep })
-  //     window.dispatchEvent(event)
-  //   }, 200) // on mount fix
-  // }, [state])
-
-  // USAGE
-  // useEffect(() => {
-  //   const onGiveawayStatus = (e: CustomEventInit<number>): void => {
-  //     if (e.detail) setGiveawayState(e.detail)
-  //   }
-  //   window.addEventListener('giveawayStatus', onGiveawayStatus)
-  //   return (): void => {
-  //     window.removeEventListener('giveawayStatus', onGiveawayStatus)
-  //   }
-  // }, [])
 
   // useEffect(() => {
   //   const submitButton = document.getElementsByClassName(classes.giveawayEmailFormButton)[0]
@@ -102,7 +50,6 @@ export const GiveawayDefault: React.FC = () => {
       {process.env.NODE_ENV !== 'development' && (
         <SmartCaptcha ref={captchaRef} siteKey={process.env.MODERN__SMART_CAPTCHA__SITE_KEY || ''} />
       )}
-      {/* {process.env.NODE_ENV !== 'development' && <Altcha ref={altchaRef} />} */}
 
       {state.currentStep < 2 ? (
         // not registered
@@ -110,6 +57,7 @@ export const GiveawayDefault: React.FC = () => {
           <div className={classes.registerBody}>
             <div className={classes.title}>{giveawayTexts.registration.title}</div>
             <div className={classes.text}>{giveawayTexts.registration.text}</div>
+            <img className={classes.giveawayPerson} src={giveawayPerson} alt="" draggable="false" />
           </div>
 
           <div className={classes.wrap}>
@@ -151,44 +99,8 @@ export const GiveawayDefault: React.FC = () => {
           <div className={classes.registeredBody}>
             <div className={classes.title}>{giveawayTexts.registered.subscribedTitle}</div>
             <div className={classes.text}>{giveawayTexts.registered.subscribedText}</div>
+            <img className={classes.giveawayPerson} src={giveawayPerson} alt="" draggable="false" />
           </div>
-
-          <SubscriptionsForm
-            title=""
-            text=""
-            aviasalesInfo={
-              {
-                ...aviasalesInfo,
-                title: '',
-                bulletPoints: ['asd'],
-                classes: {
-                  className: classes.subscriptionsFormSub,
-                  titleClassName: classes.subscriptionsFormTitle,
-                  bulletPointsClassName: classes.subscriptionsFormBulletPoints,
-                  buttonClassName: classes.subscriptionsFormButton,
-                  subscribedButtonClassName: classes.subscriptionsFormButtonDone,
-                },
-              } as SubscriptionProps
-            }
-            partnerInfo={
-              partnerInfo
-                ? ({
-                    ...partnerInfo,
-                    classes: {
-                      className: classes.subscriptionsFormSub,
-                      titleClassName: classes.subscriptionsFormTitle,
-                      bulletPointsClassName: classes.subscriptionsFormBulletPoints,
-                      buttonClassName: classes.subscriptionsFormButton,
-                      subscribedButtonClassName: classes.subscriptionsFormButtonDone,
-                    },
-                  } as SubscriptionProps)
-                : undefined
-            }
-            classes={{
-              className: classes.subscriptionsForm,
-              subscriptionsClassName: classes.subscriptionsFormSubs,
-            }}
-          />
         </div>
       )}
     </>
@@ -200,13 +112,23 @@ export const GiveawayDefault: React.FC = () => {
         <div id="giveaway" className={classes.registered}>
           <div className={classes.title}>{giveawayTexts.over.giveawayOverTitle}</div>
           <div className={classes.text}>{giveawayTexts.over.giveawayOverText}</div>
+          <img className={classes.giveawayPerson} src={giveawayPerson} alt="" draggable="false" />
         </div>
       ) : (
         // there are winners
-        <div id="giveaway" className={classes.winners}>
+        <div id="giveaway" className={classes.registered}>
           <div className={classes.title}>{giveawayTexts.winners.title}</div>
           <div className={classes.winnersCard}>
-            <div className={classes.winnersTitle}>{giveawayTexts.winners.winnersTitle}</div>
+            <div className={classes.winnersTitle}>
+              Авиабилеты{' '}
+              {winnersLink ? (
+                <a href={winnersLink} target="_blank">
+                  получат
+                </a>
+              ) : (
+                'получат'
+              )}
+            </div>
             <div className={classes.winnersList}>
               {winnersList.map((winner: string) => (
                 <div key={winner} className={classes.winner}>
@@ -214,14 +136,8 @@ export const GiveawayDefault: React.FC = () => {
                 </div>
               ))}
             </div>
-            {winnersLink && (
-              <div className={classes.winnersActions}>
-                <a href={winnersLink} target="_blank">
-                  {giveawayTexts.winners.winnersLinkText}
-                </a>
-              </div>
-            )}
           </div>
+          <img className={classes.giveawayPerson} src={giveawayPerson} alt="" draggable="false" />
         </div>
       )}
     </>

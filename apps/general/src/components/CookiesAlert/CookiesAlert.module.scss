@@ -70,6 +70,10 @@
     letter-spacing: dpx(-0.3);
     border-radius: dpx(16);
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   @include mobile {

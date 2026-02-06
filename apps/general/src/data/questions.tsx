@@ -24,8 +24,12 @@ export const questions = [
       text: <>Дайте человеку понять, в&nbsp;каком формате с&nbsp;вами лучше делиться радостью от&nbsp;работы</>,
       promo: (
         <>
-          Если он&nbsp;уже в&nbsp;курсе, дарите аромат Orange &amp;&nbsp;Oakmoss от&nbsp;Po&egrave;mes
-          de&nbsp;Provence&nbsp;&mdash; с&nbsp;ним ваш трудоголик точно не&nbsp;забудет взять отпуск
+          Если он&nbsp;уже в&nbsp;курсе, дарите{' '}
+          <a href="https://goldapple.ru/19000209010-orange-oakmoss" target="_blank">
+            аромат Orange &amp;&nbsp;Oakmoss
+          </a>{' '}
+          от&nbsp;Po&egrave;mes de&nbsp;Provence&nbsp;&mdash; с&nbsp;ним ваш трудоголик точно не&nbsp;забудет взять
+          отпуск
         </>
       ),
     },
@@ -41,8 +45,11 @@ export const questions = [
       text: <>Не&nbsp;оставят равнодушным ни&nbsp;одного кофейного модника</>,
       promo: (
         <>
-          Боитесь прогадать с&nbsp;посудой? Подарите тинт от&nbsp;Luxvisage&nbsp;&mdash; он&nbsp;останется на&nbsp;губах
-          даже после десяти чашек кофе
+          Боитесь прогадать с&nbsp;посудой? Подарите{' '}
+          <a href="https://goldapple.ru/19000344226-aqua-gel-hyaluron-complex" target="_blank">
+            тинт от&nbsp;Luxvisage
+          </a>
+          &nbsp;&mdash; он&nbsp;останется на&nbsp;губах даже после десяти чашек кофе
         </>
       ),
     },
@@ -58,8 +65,10 @@ export const questions = [
       text: <>Снизит градус слишком жарких дебатов и&nbsp;убережёт мебель под вашим спорщиком</>,
       promo: (
         <>
-          Если уберечь спорщика не&nbsp;получится, помогите ему восстановиться, например, с&nbsp;маской Chaga Peptides
-          от&nbsp;Natura Siberica
+          Если уберечь спорщика не&nbsp;получится, помогите ему восстановиться, например, с&nbsp;
+          <a href="https://goldapple.ru/19000434167-chaga-peptides" target="_blank">
+            маской Chaga Peptides от&nbsp;Natura Siberica
+          </a>
         </>
       ),
     },
@@ -75,8 +84,11 @@ export const questions = [
       text: <>Позаботьтесь о&nbsp;здоровье тех, кому снова придётся смотреть его сториз из&nbsp;отпуска!</>,
       promo: (
         <>
-          Ещё порадовать путешественника можно тревел-сетом от&nbsp;Curaprox. Внутри радостного кейса&nbsp;&mdash;
-          паста, щётка и&nbsp;ёршик
+          Ещё порадовать путешественника можно{' '}
+          <a href="https://goldapple.ru/19000132094-be-you-orange" target="_blank">
+            тревел-сетом от&nbsp;Curaprox
+          </a>
+          . Внутри радостного кейса&nbsp;&mdash; паста, щётка и&nbsp;ёршик
         </>
       ),
     },
@@ -93,7 +105,9 @@ export const questions = [
       promo: (
         <>
           Если это слишком экстравагантно, помогите стрессующему иначе&nbsp;&mdash; подарите ему, например,
-          восстанавливающую маску от&nbsp;Ollin Professional
+          <a href="https://goldapple.ru/19000428813-collagen" target="_blank">
+            восстанавливающую маску от&nbsp;Ollin Professional
+          </a>
         </>
       ),
     },
@@ -109,8 +123,11 @@ export const questions = [
       text: <>Чтобы отвечать на&nbsp;ваши сообщения можно было&nbsp;бы в&nbsp;пять раз быстрее</>,
       promo: (
         <>
-          А&nbsp;хорошим подарком может стать фен-стайлер от&nbsp;Remez&nbsp;&mdash; управлять им&nbsp;действительно
-          можно одним прикосновением
+          А&nbsp;хорошим подарком может стать{' '}
+          <a href="https://goldapple.ru/99000065158-model-s-sensor-rmb-707s" target="_blank">
+            фен-стайлер от&nbsp;Remez
+          </a>
+          &nbsp;&mdash; управлять им&nbsp;действительно можно одним прикосновением
         </>
       ),
     },
@@ -126,8 +143,11 @@ export const questions = [
       text: <>Ваш домосед сможет меньше сидеть и&nbsp;будет чаще выбираться куда-нибудь с&nbsp;вами</>,
       promo: (
         <>
-          Лучше подарите своему домоседу профессиональный уход от&nbsp;ICE Professional, чтобы ему не&nbsp;пришлось
-          лишний раз вылезать из&nbsp;дома в&nbsp;салон
+          Лучше подарите своему домоседу{' '}
+          <a href="https://goldapple.ru/19000237003-keratin-injection-20in1" target="_blank">
+            профессиональный уход от&nbsp;ICE Professional
+          </a>
+          , чтобы ему не&nbsp;пришлось лишний раз вылезать из&nbsp;дома в&nbsp;салон
         </>
       ),
     },
@@ -143,8 +163,10 @@ export const questions = [
       text: <>Порадуйте вашего рукодельника, сняв с&nbsp;его плеч самую сложную работу</>,
       promo: (
         <>
-          Если вышитую вышивку вы&nbsp;уже дарили в&nbsp;прошлом году, присмотритесь к&nbsp;крему-тонику для укладки
-          от&nbsp;Reuzel
+          Если вышитую вышивку вы&nbsp;уже дарили в&nbsp;прошлом году, присмотритесь к&nbsp;
+          <a href="https://goldapple.ru/19000406752-texture" target="_blank">
+            крему-тонику для укладки от&nbsp;Reuzel
+          </a>
         </>
       ),
     },
@@ -160,8 +182,10 @@ export const questions = [
       text: <>Галстуком вы&nbsp;никого не&nbsp;удивите. А&nbsp;вот костюм колбасы произведёт нужное впечатление</>,
       promo: (
         <>
-          Если боитесь прогадать с&nbsp;солидностью, дайте получателю выбрать подарок самостоятельно, например,
-          с&nbsp;подарочной картой &laquo;Золотого Яблока&raquo;
+          Если боитесь прогадать с&nbsp;солидностью, дайте получателю выбрать подарок самостоятельно, например, с&nbsp;
+          <a href="https://goldapple.ru/19000439419-gift-card" target="_blank">
+            подарочной картой &laquo;Золотого Яблока&raquo;
+          </a>
         </>
       ),
     },
@@ -182,8 +206,11 @@ export const questions = [
       ),
       promo: (
         <>
-          Напомнить моднику-походнику о&nbsp;горах и&nbsp;лесах поможет ежедневный шампунь Reuzel с&nbsp;запахом мяты
-          и&nbsp;тонизирующими травами
+          Напомнить моднику-походнику о&nbsp;горах и&nbsp;лесах поможет{' '}
+          <a href="https://goldapple.ru/25380100012-daily-shampoo" target="_blank">
+            ежедневный шампунь Reuzel
+          </a>{' '}
+          с&nbsp;запахом мяты и&nbsp;тонизирующими травами
         </>
       ),
     },
@@ -200,7 +227,10 @@ export const questions = [
       promo: (
         <>
           Всё контролировать, может, и&nbsp;нельзя, но&nbsp;вот объёмную укладку&nbsp;&mdash; запросто. На&nbsp;помощь
-          придёт спрей от&nbsp;Tigi Bed Head
+          придёт{' '}
+          <a href="https://goldapple.ru/37730500002-superstar-qu" target="_blank">
+            спрей от&nbsp;Tigi Bed Head
+          </a>
         </>
       ),
     },
@@ -214,7 +244,15 @@ export const questions = [
       title: <>Антиспойлер-система</>,
       forWho: <>любителю кино</>,
       text: <>Чтобы ваш киноман мог контролировать себя или других одним движением руки</>,
-      promo: <>По-настоящему пригодиться на&nbsp;киномарафоне может термотушь Shikstudio, устойчивая к&nbsp;осыпанию</>,
+      promo: (
+        <>
+          По-настоящему пригодиться на&nbsp;киномарафоне может{' '}
+          <a href="https://goldapple.ru/19000480724-lash-adept" target="_blank">
+            термотушь Shikstudio
+          </a>
+          , устойчивая к&nbsp;осыпанию
+        </>
+      ),
     },
   },
 ]
