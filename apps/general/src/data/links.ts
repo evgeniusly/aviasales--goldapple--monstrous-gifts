@@ -1,6 +1,6 @@
 export const links = {
   aviasales: 'https://aviasales.ru/',
-  client: '',
+  client: 'https://goldapple.ru/',
   rules: '/rules.pdf',
   privacy: 'https://www.aviasales.ru/privacy',
   vk: 'https://vk.com/aviasales',

@@ -14,6 +14,7 @@ import { useGameStore } from '~/store/gameStore'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
+import { ButtonPromocode } from '../ButtonPromocode'
 import { GiveawayDefault } from '../GiveawayDefault'
 
 import classes from './ScreenResults.module.scss'
@@ -95,8 +96,25 @@ export const ScreenResults: React.FC = () => {
                   </div>
                 ))}
 
-                <img className={classes.buttonNext} src={buttonNextRound} alt="" draggable="false" onClick={nextCard} />
-                <img className={classes.buttonPrev} src={buttonNextRound} alt="" draggable="false" onClick={prevCard} />
+                {deskMob(
+                  <>
+                    <img
+                      className={classes.buttonNext}
+                      src={buttonNextRound}
+                      alt=""
+                      draggable="false"
+                      onClick={nextCard}
+                    />
+                    <img
+                      className={classes.buttonPrev}
+                      src={buttonNextRound}
+                      alt=""
+                      draggable="false"
+                      onClick={prevCard}
+                    />
+                  </>,
+                  null,
+                )}
               </div>
 
               <div className={classes.resultPaginator}>
@@ -150,9 +168,13 @@ export const ScreenResults: React.FC = () => {
               <div className={classes.promoTitle}>А&nbsp;где искать хорошие подарки?</div>
               <div className={classes.promoText}>
                 <p>
-                  Тонко намекаем: в&nbsp;&laquo;Золотом Яблоке&raquo;. Категорий товаров там больше, чем кажется: есть
-                  и&nbsp;техника, и&nbsp;декор, и&nbsp;одежда. А&nbsp;выбранные подарки доставят домой, в&nbsp;офис,
-                  пункт выдачи или ближайший магазин&nbsp;&mdash; куда захотите.
+                  Тонко намекаем:{' '}
+                  <a href={links.client} target="_blank">
+                    в&nbsp;&laquo;Золотом Яблоке&raquo;
+                  </a>
+                  . Категорий товаров там больше, чем кажется: есть и&nbsp;техника, и&nbsp;декор, и&nbsp;одежда.
+                  А&nbsp;выбранные подарки доставят домой, в&nbsp;офис, пункт выдачи или ближайший магазин&nbsp;&mdash;
+                  куда захотите.
                 </p>
                 <p>
                   Начать выбирать подарки можно с&nbsp;подборки, которую команда &laquo;Золотого Яблока&raquo; сделала
@@ -161,6 +183,14 @@ export const ScreenResults: React.FC = () => {
               </div>
               <div className={classes.promoActions}>
                 <Button>Смотреть подборку</Button>
+              </div>
+            </div>
+
+            <div className={classes.promoCodeWrap}>
+              <div className={classes.promoCodeTitle}>скидка до&nbsp;20% *</div>
+              <div className={classes.promoCodeText}>На&nbsp;первый заказ по&nbsp;промокоду</div>
+              <div className={classes.promoCodeButton}>
+                <ButtonPromocode promocode="АВИАСЕЙЛС" />
               </div>
             </div>
 

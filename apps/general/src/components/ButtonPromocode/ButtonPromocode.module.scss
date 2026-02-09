@@ -1,0 +1,49 @@
+.promoCode {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: fit-content;
+  color: #000000;
+  background: #fff;
+
+  @include desktop {
+    gap: dpx(8);
+    width: dpx(150);
+    padding: dpx(8 16);
+    border-radius: dpx(30);
+    cursor: pointer;
+  }
+
+  @include mobile {
+    margin: auto;
+    gap: mpx(8);
+    padding: mpx(13 16);
+    border-radius: mpx(30);
+  }
+}
+
+.promoCodeIcon {
+  display: block;
+
+  @include desktop {
+    width: dpx(20);
+    height: dpx(21);
+  }
+
+  @include mobile {
+    width: mpx(20);
+    height: mpx(21);
+  }
+}
+
+.promoCodeText {
+  display: block;
+
+  @include desktop {
+    font-size: dpx(14);
+  }
+
+  @include mobile {
+    font-size: mpx(15);
+  }
+}
