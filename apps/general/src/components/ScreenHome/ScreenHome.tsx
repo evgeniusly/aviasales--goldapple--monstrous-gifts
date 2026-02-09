@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import homeGifts from '@assets/images/homeGifts.png'
 import homeParticlesClose from '@assets/images/homeParticlesClose.png'
 import homeParticlesFar from '@assets/images/homeParticlesFar.png'
+import homeParticlesMob from '@assets/images/homeParticlesMob.png'
 import homePersonBody from '@assets/images/homePersonBody.png'
 import homePersonHand from '@assets/images/homePersonHand.png'
 
@@ -71,15 +72,22 @@ export const ScreenHome: React.FC = () => {
 
   return (
     <div className={classNames(classes.home, 'screen', isScreenInvisible && 'screenInvisible')}>
-      <ParallaxByMouse>
-        <img className={classes.homeParticlesFar} src={homeParticlesFar} alt="" draggable="false" />
-      </ParallaxByMouse>
-      <ParallaxByMouse distance={2}>
-        <img className={classes.homeParticlesClose} src={homeParticlesClose} alt="" draggable="false" />
-      </ParallaxByMouse>
-      <ParallaxByMouse distance={3}>
-        <img className={classes.homeGifts} src={homeGifts} alt="" draggable="false" />
-      </ParallaxByMouse>
+      {deskMob(
+        <>
+          <ParallaxByMouse>
+            <img className={classes.homeParticlesFar} src={homeParticlesFar} alt="" draggable="false" />
+          </ParallaxByMouse>
+          <ParallaxByMouse distance={2}>
+            <img className={classes.homeParticlesClose} src={homeParticlesClose} alt="" draggable="false" />
+          </ParallaxByMouse>
+          <ParallaxByMouse distance={3}>
+            <img className={classes.homeGifts} src={homeGifts} alt="" draggable="false" />
+          </ParallaxByMouse>
+        </>,
+        <>
+          <img className={classes.homeParticlesMob} src={homeParticlesMob} alt="" draggable="false" />
+        </>,
+      )}
 
       <Floater className={classes.person}>
         <div className={classes.personHolder}>

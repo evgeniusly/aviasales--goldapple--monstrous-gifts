@@ -3,6 +3,8 @@ import React from 'react'
 
 import aviasalesLogo from '~/assets/images/aviasalesLogo.svg?url'
 import clientLogo from '~/assets/images/clientLogo.svg?url'
+import soundOff from '~/assets/images/soundOff.svg?url'
+// import soundOn from '~/assets/images/soundOn.svg?url'
 import { links } from '~/data'
 import { useAppStore } from '~/store/appStore'
 
@@ -41,6 +43,9 @@ export const Header: React.FC = () => {
           <a className={classes.rulesLink} href={links.rules} target="_blank">
             Правила
           </a>
+          <button className={classes.soundBtn}>
+            <img className={classes.soundBtnImg} src={soundOff} alt="" draggable="false" />
+          </button>
         </div>
       </div>
     </div>

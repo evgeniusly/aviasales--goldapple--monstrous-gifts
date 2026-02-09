@@ -12,7 +12,6 @@
 
   @include mobile {
     position: relative;
-    justify-content: flex-start;
     min-height: 100vh;
     min-height: 100dvh;
   }
@@ -60,6 +59,20 @@
   }
 }
 
+.homeParticlesMob {
+  position: absolute;
+  margin: auto;
+
+  @include mobile {
+    left: mpx(8);
+    top: mpx(54);
+    right: mpx(15);
+    bottom: mpx(537);
+    width: mpx(352);
+    height: mpx(76);
+  }
+}
+
 .person {
   position: absolute;
   margin: auto;
@@ -71,6 +84,14 @@
     bottom: dpx(580);
     width: dpx(318);
     height: dpx(316);
+  }
+  @include mobile {
+    left: mpx(93.58);
+    top: mpx(58.22);
+    right: mpx(144.58);
+    bottom: mpx(473);
+    width: mpx(136.83);
+    height: mpx(135.78);
   }
 }
 
@@ -102,6 +123,11 @@
   @include desktop {
     width: dpx(900);
   }
+
+  @include mobile {
+    width: mpx(345);
+    margin-top: mpx(163 - 96);
+  }
 }
 
 .title {
@@ -114,7 +140,7 @@
   }
 
   @include mobile {
-    margin-bottom: mpx(16);
+    margin-bottom: mpx(15);
   }
 }
 
@@ -144,6 +170,14 @@
     font-size: dpx(96);
     border-radius: dpx(64);
   }
+
+  @include mobile {
+    height: mpx(62.22);
+    margin-bottom: mpx(4);
+    padding: mpx(5 20);
+    font-size: mpx(60);
+    border-radius: mpx(40.432);
+  }
 }
 
 .titleMid {
@@ -151,6 +185,10 @@
 
   @include desktop {
     font-size: dpx(150);
+  }
+
+  @include mobile {
+    font-size: mpx(100);
   }
 }
 
@@ -161,9 +199,15 @@
   @include desktop {
     font-size: dpx(150);
   }
+
+  @include mobile {
+    font-size: mpx(60);
+  }
 }
 
 .text {
+  line-height: 130%;
+
   @include desktop {
     width: dpx(592);
     margin: 0 auto dpx(48);
@@ -171,8 +215,8 @@
   }
 
   @include mobile {
-    margin-bottom: mpx(24);
-    font-size: mpx(15);
+    margin-bottom: mpx(30);
+    font-size: mpx(18);
   }
 }
 
@@ -187,7 +231,7 @@
   }
 
   @include mobile {
-    gap: mpx(20);
+    gap: mpx(12);
   }
 }
 
@@ -207,5 +251,9 @@
       color: #161618;
       opacity: 0.8;
     }
+  }
+
+  @include mobile {
+    font-size: mpx(18);
   }
 }

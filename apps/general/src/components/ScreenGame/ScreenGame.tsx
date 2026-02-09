@@ -3,12 +3,14 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import gameParticlesClose from '@assets/images/gameParticlesClose.png'
 import gameParticlesFar from '@assets/images/gameParticlesFar.png'
+import gamePersonMob from '@assets/images/gamePersonMob.png'
 import loaderAnim from '@assets/images/loader.webp'
 import loaderParticles from '@assets/images/loaderParticles.png'
+import loaderParticlesMob from '@assets/images/loaderParticlesMob.png'
 import personIngame from '@assets/images/personIngame80.webp'
 
 import { answerLimit, preloads, questions } from '~/data'
-import { LOADER_TEXT_DURATION_MS, loaderTexts } from '~/data/loader'
+import { LOADER_TEXT_DURATION_MS, loaderTexts, loaderTextsMob } from '~/data/loader'
 import { useAppStore } from '~/store/appStore'
 import { useGameStore } from '~/store/gameStore'
 import assetPreloader from '~/utils/assetPreloader'
@@ -72,7 +74,7 @@ export const ScreenGame: React.FC = () => {
 
     loaderTimerRef.current = setInterval(() => {
       loaderTitleId.current += 1
-      if (loaderTexts[loaderTitleId.current]) {
+      if (deskMob(loaderTexts, loaderTextsMob)[loaderTitleId.current]) {
         setLoaderTextId(loaderTitleId.current)
       } else {
         clearInterval(loaderTimerRef.current)
@@ -80,7 +82,7 @@ export const ScreenGame: React.FC = () => {
         gotoResults()
       }
     }, LOADER_TEXT_DURATION_MS)
-  }, [answerCount, answerLimit, selectedIds])
+  }, [answerCount, answerLimit, selectedIds, deviceType])
 
   useEffect(() => {
     if (deviceType === 'unknown') return
@@ -103,14 +105,19 @@ export const ScreenGame: React.FC = () => {
     <div className={classNames(classes.game, 'screen', isScreenInvisible && 'screenInvisible')}>
       {!isEnding && (
         <div className={classes.process}>
-          <ParallaxByMouse>
-            <img className={classes.gameParticlesFar} src={gameParticlesFar} alt="" draggable="false" />
-          </ParallaxByMouse>
-          <ParallaxByMouse distance={2}>
-            <img className={classes.gameParticlesClose} src={gameParticlesClose} alt="" draggable="false" />
-          </ParallaxByMouse>
+          {deskMob(
+            <>
+              <ParallaxByMouse>
+                <img className={classes.gameParticlesFar} src={gameParticlesFar} alt="" draggable="false" />
+              </ParallaxByMouse>
+              <ParallaxByMouse distance={2}>
+                <img className={classes.gameParticlesClose} src={gameParticlesClose} alt="" draggable="false" />
+              </ParallaxByMouse>
 
-          <img className={classes.person} src={personIngame} alt="" draggable="false" />
+              <img className={classes.person} src={personIngame} alt="" draggable="false" />
+            </>,
+            null,
+          )}
 
           <div className={classes.content}>
             <div className={classes.body}>
@@ -146,17 +153,30 @@ export const ScreenGame: React.FC = () => {
                   <Button mod={'yellow'} disabled={selectedIds.length < answerLimit}>
                     Подобрать подарки
                   </Button>
-                  {isSubmitTip && <div className={classes.submitTip}>Нужно выбрать три характеристики</div>}
+                  {isSubmitTip && <div className={classes.submitTip}>Нужно выбрать три&nbsp;характеристики</div>}
                 </div>
               </div>
             </div>
           </div>
+
+          {deskMob(
+            null,
+            <>
+              <img className={classes.gamePersonLeft} src={gamePersonMob} alt="" draggable="false" />
+              <img className={classes.gamePersonRight} src={gamePersonMob} alt="" draggable="false" />
+            </>,
+          )}
         </div>
       )}
 
       {isEnding && (
         <div className={classes.loader}>
-          <img className={classes.loaderParticles} src={loaderParticles} alt="" draggable="false" />
+          <img
+            className={classes.loaderParticles}
+            src={deskMob(loaderParticles, loaderParticlesMob)}
+            alt=""
+            draggable="false"
+          />
           <img className={classes.loaderAnim} src={loaderAnim} alt="" draggable="false" />
           <img
             key={loaderTextId}

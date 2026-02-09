@@ -36,10 +36,10 @@
   @include mobile {
     gap: mpx(4);
     width: 100%;
-    height: mpx(52);
-    padding: mpx(16 40);
-    font-size: mpx(16);
-    border-radius: mpx(16);
+    height: mpx(56);
+    padding: mpx(8 16);
+    font-size: mpx(18);
+    border-radius: mpx(40);
   }
 }
 

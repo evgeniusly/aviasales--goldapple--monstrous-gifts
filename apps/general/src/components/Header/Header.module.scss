@@ -19,8 +19,8 @@
   }
 
   @include mobile {
-    padding-top: mpx(16);
-    width: mpx(343);
+    padding: mpx(11 16);
+    width: 100%;
   }
 }
 
@@ -58,8 +58,8 @@
   }
 
   @include mobile {
-    width: mpx(97);
-    height: mpx(20);
+    width: mpx(76.6);
+    height: mpx(16);
   }
 }
 
@@ -72,8 +72,8 @@
   }
 
   @include mobile {
-    width: mpx(97);
-    height: mpx(20);
+    width: mpx(114.95);
+    height: mpx(16);
   }
 }
 
@@ -86,8 +86,21 @@
   }
 
   @include mobile {
-    width: mpx(8);
-    height: mpx(8);
+    width: mpx(7);
+    height: mpx(7);
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  @include desktop {
+    gap: dpx(10);
+  }
+
+  @include mobile {
+    gap: mpx(6);
   }
 }
 
@@ -99,10 +112,11 @@
   text-decoration: none;
 
   @include desktop {
-    padding: dpx(6 16);
+    padding: dpx(6 16 4);
     font-size: dpx(16);
     border: dpx(1) solid var(--Black, #161618);
     border-radius: dpx(67);
+    transition: opacity var(--transition-main);
 
     &:hover {
       color: #161618;
@@ -112,8 +126,50 @@
   }
 
   @include mobile {
+    height: mpx(28);
+    padding: mpx(5 8 3);
     font-size: mpx(12);
+    border: mpx(1) solid var(--Black, #161618);
+    border-radius: mpx(53.413);
   }
+}
+
+.soundBtn {
+  background: none;
+  border: none;
+  outline: none;
+  display: block;
+  position: relative;
+
+  @include desktop {
+    width: dpx(35);
+    height: dpx(34);
+    border: dpx(1) solid var(--Black, #161618);
+    border-radius: dpx(67);
+    transition: opacity var(--transition-main);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @include mobile {
+    width: mpx(28);
+    height: mpx(28);
+    border: mpx(1) solid var(--Black, #161618);
+    border-radius: mpx(53.413);
+  }
+}
+
+.soundBtnImg {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 // at home

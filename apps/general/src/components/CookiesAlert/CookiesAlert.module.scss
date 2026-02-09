@@ -27,8 +27,8 @@
   @include mobile {
     gap: mpx(16);
     width: 100%;
-    padding: mpx(12 24);
-    border-radius: mpx(12 12 0 0);
+    padding: mpx(8 24);
+    border-radius: mpx(24 24 0 0);
   }
 }
 
@@ -42,7 +42,7 @@
   }
 
   @include mobile {
-    font-size: mpx(13);
+    font-size: mpx(12);
   }
 
   a {
@@ -77,9 +77,9 @@
   }
 
   @include mobile {
-    width: mpx(74);
-    height: mpx(38);
-    font-size: mpx(14);
-    border-radius: mpx(8);
+    width: mpx(85);
+    height: mpx(30);
+    font-size: mpx(12);
+    border-radius: mpx(16);
   }
 }

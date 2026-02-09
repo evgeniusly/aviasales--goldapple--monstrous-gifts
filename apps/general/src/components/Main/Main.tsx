@@ -39,7 +39,7 @@ export const Main: React.FC<IMain> = ({ screen: screenFromProps }) => {
       },
       breakpoints: [
         [1920, 980, 900, 540], // "Desktop"
-        screenId !== 'results' ? [375, 667, 300, 300] : [375, 1, 300, 300], // "Mobile"
+        [375, 667, 300, 300], // "Mobile"
       ],
     })
     const isMobileInterface = getIsMobileInterface({

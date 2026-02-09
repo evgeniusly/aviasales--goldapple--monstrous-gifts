@@ -1,22 +1,32 @@
 .game {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  @include desktop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @include mobile {
+    position: relative;
+    padding: mpx(66 0 82);
+    min-height: 100dvh;
+  }
 }
 
 .process {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .gameParticlesFar {
@@ -60,17 +70,77 @@
   }
 }
 
+.gamePersonLeft,
+.gamePersonRight {
+  position: fixed;
+  display: block;
+  pointer-events: none;
+
+  @include mobile {
+    width: mpx(170);
+    height: mpx(175);
+  }
+}
+
+@keyframes gamePersonLeftAnim {
+  0%,
+  40%,
+  100% {
+    transform: translateX(-100%);
+  }
+  20%,
+  30% {
+    transform: none;
+  }
+}
+.gamePersonLeft {
+  @include mobile {
+    left: mpx(-81);
+    top: mpx(25);
+    animation: gamePersonLeftAnim 12s ease-in-out infinite;
+  }
+}
+
+@keyframes gamePersonRightAnim {
+  0%,
+  40%,
+  100% {
+    transform: translateX(100%) scaleX(-1);
+  }
+  20%,
+  30% {
+    transform: scaleX(-1);
+  }
+}
+.gamePersonRight {
+  @include mobile {
+    top: mpx(174);
+    right: mpx(-81);
+    animation: gamePersonRightAnim 12s ease-in-out -7s infinite;
+  }
+}
+
+//
 .content {
   position: relative;
 
   @include desktop {
     width: dpx(1920 - 216 - 216);
   }
+
+  @include mobile {
+    width: mpx(320);
+    margin: auto;
+  }
 }
 
 .body {
   @include desktop {
     width: dpx(916);
+  }
+
+  @include mobile {
+    text-align: center;
   }
 }
 
@@ -83,6 +153,12 @@
     gap: dpx(18);
     margin-bottom: dpx(64);
   }
+
+  @include mobile {
+    justify-content: center;
+    gap: mpx(18);
+    margin-bottom: mpx(24);
+  }
 }
 
 .progressBar {
@@ -94,6 +170,13 @@
     height: dpx(12);
     border: dpx(1) solid var(--Black, #161618);
     border-radius: dpx(20);
+  }
+
+  @include mobile {
+    width: mpx(258);
+    height: mpx(6);
+    border: mpx(1) solid var(--Black, #161618);
+    border-radius: mpx(20);
   }
 }
 
@@ -108,11 +191,22 @@
   @include desktop {
     border-radius: dpx(20);
   }
+
+  @include mobile {
+    border-radius: mpx(20);
+  }
 }
 
 .progressCounter {
   @include desktop {
     font-size: dpx(23);
+  }
+
+  @include mobile {
+    width: mpx(36);
+    font-size: mpx(16);
+    text-align: right;
+    white-space: nowrap;
   }
 }
 
@@ -126,6 +220,11 @@
     margin-bottom: dpx(12);
     font-size: dpx(64);
   }
+
+  @include mobile {
+    margin-bottom: mpx(24);
+    font-size: mpx(36);
+  }
 }
 
 .subtitle {
@@ -135,15 +234,25 @@
     margin-bottom: dpx(38);
     font-size: dpx(24);
   }
+
+  @include mobile {
+    margin-bottom: mpx(24);
+    font-size: mpx(18);
+  }
 }
 
 //
 .options {
   display: flex;
-  flex-wrap: wrap;
 
   @include desktop {
+    flex-wrap: wrap;
     gap: dpx(12);
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: mpx(12);
   }
 }
 
@@ -161,6 +270,14 @@
     border-radius: dpx(200);
     cursor: pointer;
   }
+
+  @include mobile {
+    padding: mpx(12 20);
+    font-size: mpx(16);
+    text-align: center;
+    border: mpx(2) solid var(--Black, #161618);
+    border-radius: mpx(200);
+  }
 }
 
 .optionSelected {
@@ -173,11 +290,18 @@
   @include desktop {
     margin-top: dpx(100);
   }
+
+  @include mobile {
+    margin-top: mpx(24);
+  }
 }
 
 .submitWrap {
   position: relative;
-  width: fit-content;
+
+  @include desktop {
+    width: fit-content;
+  }
 }
 
 @keyframes submitTipAnim {
@@ -206,6 +330,15 @@
     height: dpx(58);
     padding: dpx(4 16 8);
     font-size: dpx(16);
+  }
+
+  @include mobile {
+    left: mpx(59.95);
+    top: mpx(-60);
+    width: mpx(197);
+    height: mpx(58);
+    padding: mpx(4 16 8);
+    font-size: mpx(16);
   }
 }
 
@@ -237,6 +370,15 @@
     width: dpx(966);
     height: dpx(430);
   }
+
+  @include mobile {
+    left: mpx(25);
+    top: mpx(69);
+    right: mpx(47);
+    bottom: mpx(150);
+    width: mpx(303);
+    height: mpx(448);
+  }
 }
 
 .loaderAnim {
@@ -250,6 +392,15 @@
     bottom: dpx(230);
     width: dpx(410);
     height: dpx(500);
+  }
+
+  @include mobile {
+    left: mpx(21);
+    top: mpx(211);
+    right: mpx(120);
+    bottom: mpx(170);
+    width: mpx(234);
+    height: mpx(286);
   }
 }
 
@@ -269,6 +420,14 @@
       width: dpx(439);
       height: dpx(199);
     }
+    @include mobile {
+      left: mpx(113);
+      top: mpx(137);
+      right: mpx(11);
+      bottom: mpx(422);
+      width: mpx(251);
+      height: mpx(108);
+    }
   }
   &-1 {
     @include desktop {
@@ -278,6 +437,14 @@
       bottom: dpx(594);
       width: dpx(439);
       height: dpx(199);
+    }
+    @include mobile {
+      left: mpx(113);
+      top: mpx(137);
+      right: mpx(11);
+      bottom: mpx(422);
+      width: mpx(251);
+      height: mpx(108);
     }
   }
   &-2 {
@@ -289,6 +456,14 @@
       width: dpx(439);
       height: dpx(199);
     }
+    @include mobile {
+      left: mpx(113);
+      top: mpx(137);
+      right: mpx(11);
+      bottom: mpx(422);
+      width: mpx(251);
+      height: mpx(108);
+    }
   }
   &-3 {
     @include desktop {
@@ -299,6 +474,14 @@
       width: dpx(439);
       height: dpx(199);
     }
+    @include mobile {
+      left: mpx(113);
+      top: mpx(137);
+      right: mpx(11);
+      bottom: mpx(422);
+      width: mpx(251);
+      height: mpx(108);
+    }
   }
   &-4 {
     @include desktop {
@@ -308,6 +491,14 @@
       bottom: dpx(594);
       width: dpx(439);
       height: dpx(199);
+    }
+    @include mobile {
+      left: mpx(113);
+      top: mpx(137);
+      right: mpx(11);
+      bottom: mpx(422);
+      width: mpx(251);
+      height: mpx(108);
     }
   }
 }
