@@ -66,9 +66,9 @@
 
   @include desktop {
     left: dpx(422);
-    top: dpx(117);
+    top: dpx(84);
     right: dpx(1180);
-    bottom: dpx(547);
+    bottom: dpx(580);
     width: dpx(318);
     height: dpx(316);
   }
@@ -100,7 +100,7 @@
   text-align: center;
 
   @include desktop {
-    width: dpx(592);
+    width: dpx(900);
   }
 }
 
@@ -110,7 +110,7 @@
   text-transform: uppercase;
 
   @include desktop {
-    margin-bottom: dpx(40);
+    margin-bottom: dpx(12);
   }
 
   @include mobile {
@@ -125,17 +125,6 @@
 
   @include desktop {
     width: dpx(501);
-  }
-}
-
-.homeTitleBant {
-  position: absolute;
-
-  @include desktop {
-    left: dpx(205.69);
-    top: dpx(-82.99);
-    width: dpx(133);
-    height: dpx(105);
   }
 }
 
@@ -161,21 +150,23 @@
   line-height: 96%;
 
   @include desktop {
-    font-size: dpx(160);
+    font-size: dpx(150);
   }
 }
 
 .titleBot {
   line-height: 96%;
+  white-space: nowrap;
 
   @include desktop {
-    font-size: dpx(96);
+    font-size: dpx(150);
   }
 }
 
 .text {
   @include desktop {
-    margin-bottom: dpx(80);
+    width: dpx(592);
+    margin: 0 auto dpx(48);
     font-size: dpx(24);
   }
 
@@ -189,12 +180,32 @@
   display: grid;
 
   @include desktop {
-    grid-template-columns: repeat(2, dpx(288));
     gap: dpx(16);
+    min-width: dpx(288);
+    width: fit-content;
+    margin: auto;
   }
 
   @include mobile {
-    flex-direction: column;
     gap: mpx(20);
+  }
+}
+
+.toResultsBtn {
+  border: none;
+  background: none;
+  outline: none;
+  color: #161618;
+  font-weight: 600;
+  transition: opacity var(--transition-main);
+
+  @include desktop {
+    font-size: dpx(22);
+    cursor: pointer;
+
+    &:hover {
+      color: #161618;
+      opacity: 0.8;
+    }
   }
 }

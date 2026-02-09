@@ -6,7 +6,6 @@ import homeParticlesClose from '@assets/images/homeParticlesClose.png'
 import homeParticlesFar from '@assets/images/homeParticlesFar.png'
 import homePersonBody from '@assets/images/homePersonBody.png'
 import homePersonHand from '@assets/images/homePersonHand.png'
-import homeTitleBant from '@assets/images/homeTitleBant.svg?url'
 
 import { preloads } from '~/data'
 import { useAppStore } from '~/store/appStore'
@@ -92,22 +91,21 @@ export const ScreenHome: React.FC = () => {
       <div className={classes.body}>
         <div className={classes.title}>
           <div className={classes.titleTopWrap}>
-            <img className={classes.homeTitleBant} src={homeTitleBant} alt="" draggable="false" />
             <div className={classes.titleTop}>{titleTop}</div>
           </div>
           <div className={classes.titleMid}>подарки</div>
-          <div className={classes.titleBot}>{titleBot}</div>
+          <div className={classes.titleBot}>для {titleBot}</div>
         </div>
 
         <div className={classes.text}>Доверьте нашей злюке выбор подарков и&nbsp;выиграйте путешествие </div>
 
         <div className={classes.actions}>
-          <Button glow onClick={gotoGame}>
+          <Button glow mod={'yellow'} onClick={gotoGame}>
             Погнали
           </Button>
-          <Button mod={'yellow'} onClick={gotoResults}>
+          <button className={classes.toResultsBtn} onClick={gotoResults}>
             Сразу к розыгрышу
-          </Button>
+          </button>
         </div>
       </div>
     </div>
