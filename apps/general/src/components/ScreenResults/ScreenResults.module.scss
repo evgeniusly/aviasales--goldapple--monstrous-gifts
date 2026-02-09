@@ -304,11 +304,31 @@
 
 // PROMO
 .promoWrap {
+  position: relative;
+
   @include desktop {
     width: dpx(1354);
     margin: dpx(64) auto;
     padding: dpx(112 692 94 153);
   }
+}
+
+.promoBg {
+  position: absolute;
+  background: var(--Lime, #efff91);
+
+  @include desktop {
+    left: dpx(63.07);
+    top: dpx(15.95);
+    right: dpx(62.93);
+    bottom: dpx(15.68);
+    border-radius: dpx(40);
+    transform: rotate(-1.5deg);
+  }
+}
+
+.promoBody {
+  position: relative;
 }
 
 .promoTitle {
@@ -337,6 +357,27 @@
     width: dpx(322);
     margin-top: dpx(40);
   }
+}
+
+.promoIllustration {
+  position: absolute;
+
+  @include desktop {
+    top: dpx(40);
+    right: dpx(110);
+    width: dpx(475);
+    height: dpx(530);
+  }
+}
+
+.promoBoxes,
+.promo80 {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 //

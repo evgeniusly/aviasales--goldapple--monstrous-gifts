@@ -4,6 +4,8 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import buttonNextRound from '@assets/images/buttonNextRound.svg?url'
 import cardPromoLeft from '@assets/images/cardPromoLeft.png'
 import cardPromoRight from '@assets/images/cardPromoRight.png'
+import promo80 from '@assets/images/promo80.webp'
+import promoBoxes from '@assets/images/promoBoxes.png'
 import resEmpty from '@assets/images/resEmpty.png'
 
 import { links, preloads, questions } from '~/data'
@@ -142,6 +144,8 @@ export const ScreenResults: React.FC = () => {
 
         {!isDeadlined && (
           <div className={classes.promoWrap}>
+            <div className={classes.promoBg}></div>
+
             <div className={classes.promoBody}>
               <div className={classes.promoTitle}>А&nbsp;где искать хорошие подарки?</div>
               <div className={classes.promoText}>
@@ -158,6 +162,11 @@ export const ScreenResults: React.FC = () => {
               <div className={classes.promoActions}>
                 <Button>Смотреть подборку</Button>
               </div>
+            </div>
+
+            <div className={classes.promoIllustration}>
+              <img className={classes.promoBoxes} src={promoBoxes} alt="" draggable="false" />
+              <img className={classes.promo80} src={promo80} alt="" draggable="false" />
             </div>
           </div>
         )}

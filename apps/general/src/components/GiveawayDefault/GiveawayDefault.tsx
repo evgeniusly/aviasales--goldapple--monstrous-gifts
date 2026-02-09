@@ -24,23 +24,30 @@ export const GiveawayDefault: React.FC = () => {
   // useEffect(() => {
   //   const submitButton = document.getElementsByClassName(classes.giveawayEmailFormButton)[0]
   //   const shareButtons = document.getElementsByClassName(classes.giveawayShareFormLink)
+  //   const checkboxes = document.getElementsByClassName(classes.giveawayEmailFormCheckbox)
   //   const onSubmitClick = (): void => analyticsEvent('clickSend')
   //   const onVkClick = (): void => analyticsEvent('clickVk')
   //   const onTgClick = (): void => analyticsEvent('clickTg')
   //   const onWaClick = (): void => analyticsEvent('clickWa')
   //   const onCpClick = (): void => analyticsEvent('clickCopy')
+  //   const onChkBox1Click = (): void => analyticsEvent('buttonAgree1')
+  //   const onChkBox2Click = (): void => analyticsEvent('buttonAgree2')
 
   //   if (submitButton) submitButton.addEventListener('click', onSubmitClick)
   //   if (shareButtons[0]) shareButtons[0].addEventListener('click', onVkClick)
   //   if (shareButtons[1]) shareButtons[1].addEventListener('click', onTgClick)
   //   if (shareButtons[2]) shareButtons[2].addEventListener('click', onWaClick)
   //   if (shareButtons[3]) shareButtons[3].addEventListener('click', onCpClick)
+  //   if (checkboxes[0]) checkboxes[0].addEventListener('click', onChkBox1Click, { once: true })
+  //   if (checkboxes[1]) checkboxes[1].addEventListener('click', onChkBox2Click, { once: true })
   //   return (): void => {
   //     if (submitButton) submitButton.removeEventListener('click', onSubmitClick)
   //     if (shareButtons[0]) shareButtons[0].removeEventListener('click', onVkClick)
   //     if (shareButtons[1]) shareButtons[1].removeEventListener('click', onTgClick)
   //     if (shareButtons[2]) shareButtons[2].removeEventListener('click', onWaClick)
   //     if (shareButtons[3]) shareButtons[3].removeEventListener('click', onCpClick)
+  //     if (checkboxes[0]) checkboxes[0].removeEventListener('click', onChkBox1Click)
+  //     if (checkboxes[1]) checkboxes[1].removeEventListener('click', onChkBox2Click)
   //   }
   // }, [])
 
