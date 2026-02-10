@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useSwipeable } from 'react-swipeable'
 
 import buttonNextRound from '@assets/images/buttonNextRound.svg?url'
 import cardPromoLeft from '@assets/images/cardPromoLeft.png'
@@ -32,30 +33,56 @@ export const ScreenResults: React.FC = () => {
 
   const [cardSelectedId, setCardSelectedId] = useState(0)
 
+  const swiperAwaibleRef = useRef(true)
+  const swiperDebTimerRef = useRef<NodeJS.Timer>()
+
   const [isTestedLocal, resultData] = useMemo(() => {
     return [isTested, isTested ? anwerIds.map((id) => questions[id]?.result) : []]
   }, []) // do not subscribe this !
+
+  const swiperHandlers = useSwipeable({
+    onSwipedLeft: () => nextCard(),
+    onSwipedRight: () => prevCard(),
+    touchEventOptions: { passive: false },
+    trackMouse: true,
+  })
 
   const onRestartClick = useCallback(() => {
     resetAll()
     gotoGame()
   }, [resetAll])
 
-  const selectCard = useCallback((id: number) => {
-    setCardSelectedId(id)
-  }, [])
+  const selectCard = useCallback(
+    (id: number) => {
+      if (!swiperAwaibleRef.current) return
+      if (cardSelectedId === id) return
+      setCardSelectedId(id)
+
+      swiperAwaibleRef.current = false
+      swiperDebTimerRef.current = setTimeout(() => {
+        swiperAwaibleRef.current = true
+      }, 400)
+    },
+    [cardSelectedId],
+  )
 
   const nextCard = useCallback(() => {
-    setCardSelectedId((prev) => (prev + 1) % anwerIds.length)
-  }, [anwerIds])
+    selectCard((cardSelectedId + 1) % anwerIds.length)
+  }, [selectCard, cardSelectedId, anwerIds])
   const prevCard = useCallback(() => {
-    setCardSelectedId((prev) => (prev - 1 + anwerIds.length) % anwerIds.length)
-  }, [anwerIds])
+    selectCard((cardSelectedId - 1 + anwerIds.length) % anwerIds.length)
+  }, [selectCard, cardSelectedId, anwerIds])
 
   useEffect(() => {
     if (deviceType === 'unknown') return
     void assetPreloader([...preloads.preGame, ...deskMob(preloads.preGameDesk, preloads.preGameMob)])
   }, [deviceType])
+
+  useEffect(() => {
+    return (): void => {
+      clearTimeout(swiperDebTimerRef.current)
+    }
+  }, [])
 
   return (
     <div className={classNames(classes.results, 'screen', isScreenInvisible && 'screenInvisible')}>
@@ -77,7 +104,11 @@ export const ScreenResults: React.FC = () => {
                         classes.resultCardWrapRight,
                     )}
                   >
-                    <div className={classes.resultCard} onClick={() => selectCard(cardId)}>
+                    <div
+                      className={classes.resultCard}
+                      {...(cardId === cardSelectedId ? swiperHandlers : {})}
+                      onClick={() => selectCard(cardId)}
+                    >
                       <img className={classes.resultCardImage} src={result.image} alt="" draggable="false" />
                       <div className={classes.resultCardNumber}>Чудовищный подарок №{result.number}</div>
                       <div className={classes.resultCardTitle}>{result.title}</div>
@@ -121,6 +152,7 @@ export const ScreenResults: React.FC = () => {
               <div className={classes.resultPaginator}>
                 {resultData.map((_, cardId) => (
                   <svg
+                    key={cardId}
                     className={classNames(
                       classes.resultPaginatorItem,
                       cardId === cardSelectedId && classes.resultPaginatorItemSelected,

@@ -59,10 +59,10 @@
   perspective: 1000px;
   transform-style: preserve-3d;
   user-select: none;
+  pointer-events: none;
 
   @include desktop {
     height: dpx(782);
-    pointer-events: none;
   }
 
   @include mobile {
@@ -81,10 +81,10 @@
   transition: transform var(--slider-transition-duration) var(--slider-transition-func);
   will-change: transform;
   backface-visibility: hidden;
+  pointer-events: all;
 
   @include desktop {
     width: dpx(392);
-    pointer-events: all;
 
     &-Left {
       transform: translateZ(-360px) translate(-132%, -6%);
@@ -306,12 +306,12 @@
 .buttonPrev {
   position: absolute;
   left: 50%;
+  pointer-events: all;
 
   @include desktop {
     top: dpx(272);
     width: dpx(56);
     height: dpx(56);
-    pointer-events: all;
     cursor: pointer;
     transition: opacity var(--transition-main);
     will-change: opacity;
