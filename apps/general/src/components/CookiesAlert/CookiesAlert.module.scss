@@ -26,7 +26,7 @@
 
   @include mobile {
     gap: mpx(16);
-    width: 100%;
+    width: mpx(375);
     padding: mpx(8 24);
     border-radius: mpx(24 24 0 0);
   }
