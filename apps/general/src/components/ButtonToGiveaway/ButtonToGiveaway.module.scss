@@ -1,0 +1,69 @@
+// unrotated sizes
+$width: 276;
+$height: 72;
+$widthMob: 223;
+$heightMob: 48;
+// rotated position
+$top: 423;
+$topMob: 270;
+
+@keyframes buttonToGiveawayAnim {
+  0%,
+  100% {
+    transform: rotate(-90deg);
+  }
+  40% {
+    transform: translateY(42%) rotate(-90deg);
+  }
+}
+.buttonToGiveaway {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  color: #161618;
+  font-weight: 600;
+  background: #ff6d6d;
+  transition: opacity var(--transition-main);
+  animation: buttonToGiveawayAnim 4s ease-in-out infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  z-index: 101;
+
+  @include desktop {
+    gap: dpx(16);
+    right: dpx(-$width * 0.5 + $height * 0.5 - 1);
+    top: dpx($top + $width * 0.5 - $height * 0.5);
+    width: dpx($width);
+    height: dpx($height);
+    font-size: dpx(20);
+    border-radius: dpx(40 40 0 0);
+    cursor: pointer;
+  }
+
+  @include mobile {
+    gap: mpx(16);
+    right: mpx(-$widthMob * 0.5 + $heightMob * 0.5 - 1);
+    top: mpx($topMob + $widthMob * 0.5 - $heightMob * 0.5);
+    width: mpx($widthMob);
+    height: mpx($heightMob);
+    font-size: mpx(16);
+    border-radius: dpx(24 24 0 0);
+  }
+}
+
+.buttonToGiveawayHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.icon {
+  @include desktop {
+    width: dpx(32);
+    height: dpx(32);
+  }
+  @include mobile {
+    width: mpx(24);
+    height: mpx(24);
+  }
+}

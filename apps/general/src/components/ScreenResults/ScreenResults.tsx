@@ -15,6 +15,7 @@ import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
 import { ButtonPromocode } from '../ButtonPromocode'
+import { ButtonToGiveaway } from '../ButtonToGiveaway'
 import { GiveawayDefault } from '../GiveawayDefault'
 
 import classes from './ScreenResults.module.scss'
@@ -222,6 +223,8 @@ export const ScreenResults: React.FC = () => {
           </div>
         )}
       </div>
+
+      <ButtonToGiveaway />
     </div>
   )
 }
