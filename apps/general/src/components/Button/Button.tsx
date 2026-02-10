@@ -1,6 +1,9 @@
 import classNames from 'classnames'
 import React, { useCallback, useMemo } from 'react'
 
+import { SoundName } from '~/data/sounds'
+import { useSoundStore } from '~/store/soundStore'
+
 import classes from './Button.module.scss'
 
 type TMod = 'outline' | 'yellow'
@@ -16,6 +19,8 @@ interface IButtonProps {
 }
 
 export const Button: React.FC<IButtonProps> = ({ children, mod, glow, disabled, className, href, onClick }) => {
+  const playSound = useSoundStore((store) => store.playSound)
+
   const collectedClass = useMemo(
     () =>
       classNames(
@@ -49,6 +54,7 @@ export const Button: React.FC<IButtonProps> = ({ children, mod, glow, disabled, 
   const onButtonClick: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement> = useCallback(
     (e) => {
       if (typeof onClick === 'function' && !disabled) onClick(e)
+      playSound(SoundName.button)
     },
     [onClick, disabled],
   )

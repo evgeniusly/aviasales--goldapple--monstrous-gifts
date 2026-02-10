@@ -9,7 +9,9 @@ import homePersonBody from '@assets/images/homePersonBody.png'
 import homePersonHand from '@assets/images/homePersonHand.png'
 
 import { preloads } from '~/data'
+import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
+import { useSoundStore } from '~/store/soundStore'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -29,6 +31,7 @@ export const ScreenHome: React.FC = () => {
   const deskMob = useAppStore((state) => state.deskMob)
   const gotoGame = useAppStore((state) => state.gotoGame)
   const gotoResults = useAppStore((state) => state.gotoResults)
+  const playSound = useSoundStore((store) => store.playSound)
 
   const [titleTop, setTitleTop] = useState(titleTopList[0])
   const [titleBot, setTitleBot] = useState(titleBotList[0])
@@ -111,7 +114,13 @@ export const ScreenHome: React.FC = () => {
           <Button glow mod={'yellow'} onClick={gotoGame}>
             Погнали
           </Button>
-          <button className={classes.toResultsBtn} onClick={gotoResults}>
+          <button
+            className={classes.toResultsBtn}
+            onClick={() => {
+              gotoResults()
+              playSound(SoundName.button)
+            }}
+          >
             Сразу к розыгрышу
           </button>
         </div>

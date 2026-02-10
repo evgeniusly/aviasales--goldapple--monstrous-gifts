@@ -4,15 +4,20 @@ import React from 'react'
 import aviasalesLogo from '~/assets/images/aviasalesLogo.svg?url'
 import clientLogo from '~/assets/images/clientLogo.svg?url'
 import soundOff from '~/assets/images/soundOff.svg?url'
-// import soundOn from '~/assets/images/soundOn.svg?url'
+import soundOn from '~/assets/images/soundOn.svg?url'
 import { links } from '~/data'
+import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
+import { useSoundStore } from '~/store/soundStore'
 
 import classes from './Header.module.scss'
 
 export const Header: React.FC = () => {
   const screenId = useAppStore((state) => state.screenId)
   const isScreenInvisible = useAppStore((state) => state.isScreenInvisible)
+  const muted = useSoundStore((store) => store.muted)
+  const muteToggle = useSoundStore((store) => store.muteToggle)
+  const playSound = useSoundStore((store) => store.playSound)
 
   return (
     <div
@@ -43,8 +48,14 @@ export const Header: React.FC = () => {
           <a className={classes.rulesLink} href={links.rules} target="_blank">
             Правила
           </a>
-          <button className={classes.soundBtn}>
-            <img className={classes.soundBtnImg} src={soundOff} alt="" draggable="false" />
+          <button
+            className={classes.soundBtn}
+            onClick={() => {
+              muteToggle()
+              playSound(SoundName.button)
+            }}
+          >
+            <img className={classes.soundBtnImg} src={muted ? soundOff : soundOn} alt="" draggable="false" />
           </button>
         </div>
       </div>

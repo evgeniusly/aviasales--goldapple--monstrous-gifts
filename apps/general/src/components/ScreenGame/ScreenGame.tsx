@@ -11,8 +11,10 @@ import personIngame from '@assets/images/personIngame80.webp'
 
 import { answerLimit, preloads, questions } from '~/data'
 import { LOADER_TEXT_DURATION_MS, loaderTexts, loaderTextsMob } from '~/data/loader'
+import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
 import { useGameStore } from '~/store/gameStore'
+import { useSoundStore } from '~/store/soundStore'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -26,6 +28,8 @@ export const ScreenGame: React.FC = () => {
   const deskMob = useAppStore((store) => store.deskMob)
   const gotoResults = useAppStore((store) => store.gotoResults)
   const setAnswerIds = useGameStore((store) => store.setAnswerIds)
+  const playSound = useSoundStore((store) => store.playSound)
+  const stopSound = useSoundStore((store) => store.stopSound)
 
   const [answerCount, setAnswerCount] = useState(0)
   const [selectedIds, setSelectedIds] = useState<number[]>([])
@@ -53,6 +57,7 @@ export const ScreenGame: React.FC = () => {
       if (answerCount >= answerLimit) return
 
       // add new
+      playSound(SoundName.bubble)
       const newList = [...selectedIds, id]
       setSelectedIds(newList)
       setAnswerCount(newList.length)
@@ -71,6 +76,7 @@ export const ScreenGame: React.FC = () => {
     }
 
     setIsEnding(true)
+    playSound(SoundName.loaderKeyboard)
 
     loaderTimerRef.current = setInterval(() => {
       loaderTitleId.current += 1
@@ -80,6 +86,7 @@ export const ScreenGame: React.FC = () => {
         clearInterval(loaderTimerRef.current)
         setAnswerIds([...selectedIds])
         gotoResults()
+        stopSound(SoundName.loaderKeyboard)
       }
     }, LOADER_TEXT_DURATION_MS)
   }, [answerCount, answerLimit, selectedIds, deviceType])

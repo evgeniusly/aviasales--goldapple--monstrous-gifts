@@ -10,8 +10,10 @@ import promoBoxes from '@assets/images/promoBoxes.png'
 import resEmpty from '@assets/images/resEmpty.png'
 
 import { links, preloads, questions } from '~/data'
+import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
 import { useGameStore } from '~/store/gameStore'
+import { useSoundStore } from '~/store/soundStore'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -30,6 +32,7 @@ export const ScreenResults: React.FC = () => {
   const isTested = useGameStore((state) => state.isTested)
   const anwerIds = useGameStore((state) => state.anwerIds)
   const resetAll = useGameStore((state) => state.resetAll)
+  const playSound = useSoundStore((store) => store.playSound)
 
   const [cardSelectedId, setCardSelectedId] = useState(0)
 
@@ -79,6 +82,8 @@ export const ScreenResults: React.FC = () => {
   }, [deviceType])
 
   useEffect(() => {
+    playSound(SoundName.resultsShow)
+
     return (): void => {
       clearTimeout(swiperDebTimerRef.current)
     }
@@ -135,14 +140,20 @@ export const ScreenResults: React.FC = () => {
                       src={buttonNextRound}
                       alt=""
                       draggable="false"
-                      onClick={nextCard}
+                      onClick={() => {
+                        nextCard()
+                        playSound(SoundName.button)
+                      }}
                     />
                     <img
                       className={classes.buttonPrev}
                       src={buttonNextRound}
                       alt=""
                       draggable="false"
-                      onClick={prevCard}
+                      onClick={() => {
+                        prevCard()
+                        playSound(SoundName.button)
+                      }}
                     />
                   </>,
                   null,
@@ -160,7 +171,10 @@ export const ScreenResults: React.FC = () => {
                     viewBox="0 0 16 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    onClick={() => selectCard(cardId)}
+                    onClick={() => {
+                      selectCard(cardId)
+                      playSound(SoundName.button)
+                    }}
                   >
                     <circle cx="8" cy="8" r="6.5" stroke="#161618" strokeWidth="3" />
                   </svg>
