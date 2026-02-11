@@ -77,6 +77,8 @@ export const ScreenGame: React.FC = () => {
 
     setIsEnding(true)
     playSound(SoundName.loaderKeyboard)
+    void assetPreloader(selectedIds.map((id) => questions[id].result.image))
+    setAnswerIds([...selectedIds])
 
     loaderTimerRef.current = setInterval(() => {
       loaderTitleId.current += 1
@@ -84,7 +86,6 @@ export const ScreenGame: React.FC = () => {
         setLoaderTextId(loaderTitleId.current)
       } else {
         clearInterval(loaderTimerRef.current)
-        setAnswerIds([...selectedIds])
         gotoResults()
         stopSound(SoundName.loaderKeyboard)
       }
