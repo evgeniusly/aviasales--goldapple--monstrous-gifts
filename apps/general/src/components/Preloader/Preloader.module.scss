@@ -8,8 +8,9 @@
   top: 0;
   width: 100%;
   height: 100%;
+  color: var(--font-color-main, #161618);
   text-align: center;
-  background-color: #5798d0;
+  background: var(--background-color-main, #b2def7);
   overflow: hidden;
 }
 

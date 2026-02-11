@@ -1,4 +1,6 @@
 :root {
+  --font-color-main: #161618;
+  --background-color-main: #b2def7;
   --transition-main: 0.2s ease-in-out;
   --transition-screen: 0.6s ease-in-out;
 
@@ -18,9 +20,9 @@
 }
 
 html {
-  color: #161618;
+  color: var(--font-color-main, #161618);
   line-height: 130%;
-  background: #b2def7;
+  background: var(--background-color-main, #b2def7);
 
   @include desktop {
     font-size: dpx(20);
@@ -57,12 +59,12 @@ p:not(:last-child) {
 }
 
 a {
-  color: #161618;
+  color: var(--font-color-main, #161618);
   text-decoration: underline;
   transition: color var(--transition-main);
 
   @include hover {
-    color: #161618;
+    color: var(--font-color-main, #161618);
     opacity: 0.8;
   }
 }
