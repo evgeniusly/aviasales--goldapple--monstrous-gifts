@@ -22,8 +22,8 @@ import classes from './ScreenHome.module.scss'
 
 const titleTopList = ['Чудовищные', 'Ужасные', 'Кошмарные', 'Дикие', 'Беспощадные']
 const titleBotList = ['мамы', 'подружки', 'брата', 'бати', 'коллеги']
-const titleChangeDelayMs = 2000
-const handAnimDurationMs = 200
+const titleChangeDelayMs = 1000
+const handAnimDurationMs = 600
 
 export const ScreenHome: React.FC = () => {
   const isScreenInvisible = useAppStore((state) => state.isScreenInvisible)
@@ -49,7 +49,7 @@ export const ScreenHome: React.FC = () => {
     let titleChangeTimer: NodeJS.Timeout | undefined
 
     const handAnim = personHandRef.current?.animate(
-      [{ transform: 'none' }, { transform: 'rotate(10deg)' }, { transform: 'none' }],
+      [{ transform: 'none' }, { transform: 'rotate(8deg)' }, { transform: 'none' }],
       { duration: handAnimDurationMs, easing: 'ease-in-out' },
     )
 

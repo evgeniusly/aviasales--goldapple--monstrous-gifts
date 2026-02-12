@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import gameParticlesClose from '@assets/images/gameParticlesClose.png'
 import gameParticlesFar from '@assets/images/gameParticlesFar.png'
+import gamePersonBubble from '@assets/images/gamePersonBubble.png'
 import gamePersonMob from '@assets/images/gamePersonMob.png'
 import loaderAnim from '@assets/images/loader.webp'
 import loaderParticles from '@assets/images/loaderParticles.png'
@@ -123,6 +124,7 @@ export const ScreenGame: React.FC = () => {
               </ParallaxByMouse>
 
               <img className={classes.person} src={personIngame} alt="" draggable="false" />
+              <img className={classes.gamePersonBubble} src={gamePersonBubble} alt="" draggable="false" />
             </>,
             null,
           )}

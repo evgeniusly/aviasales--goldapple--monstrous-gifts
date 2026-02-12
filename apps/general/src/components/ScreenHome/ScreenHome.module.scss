@@ -155,6 +155,9 @@
 }
 
 .titleTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: fit-content;
   left: 50%;
@@ -164,18 +167,19 @@
   background: var(--Black, #161618);
 
   @include desktop {
-    height: dpx(99);
-    margin-bottom: dpx(8);
-    padding: dpx(10 32);
-    font-size: dpx(96);
+    height: dpx(94);
+    margin-bottom: dpx(12);
+    padding: dpx(12 32 0);
+    font-size: dpx(88);
     border-radius: dpx(64);
   }
 
   @include mobile {
     height: mpx(62.22);
-    margin-bottom: mpx(4);
-    padding: mpx(5 20);
+    margin-bottom: mpx(8);
+    padding: mpx(10 20 0);
     font-size: mpx(60);
+    line-height: mpx(42);
     border-radius: mpx(40.432);
   }
 }
@@ -185,6 +189,7 @@
 
   @include desktop {
     font-size: dpx(150);
+    margin-bottom: dpx(-8);
   }
 
   @include mobile {

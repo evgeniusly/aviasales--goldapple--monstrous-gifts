@@ -9,7 +9,7 @@ import loaderTitle4Mob from '@assets/images/loaderTitle4Mob.png'
 import loaderTitle5 from '@assets/images/loaderTitle5.png'
 import loaderTitle5Mob from '@assets/images/loaderTitle5Mob.png'
 
-export const LOADER_TEXT_DURATION_MS = 500
+export const LOADER_TEXT_DURATION_MS = 1000
 
 export const loaderTexts = [loaderTitle1, loaderTitle2, loaderTitle3, loaderTitle4, loaderTitle5]
 export const loaderTextsMob = [loaderTitle1Mob, loaderTitle2Mob, loaderTitle3Mob, loaderTitle4Mob, loaderTitle5Mob]

@@ -271,13 +271,13 @@
   background: var(--Lime, #efff91);
 
   @include desktop {
-    min-height: dpx(166);
+    min-height: dpx(80);
     margin-top: dpx(16);
-    padding: dpx(12 40);
+    padding: dpx(28 40);
     border-radius: dpx(40);
   }
   @include mobile {
-    min-height: mpx(180);
+    min-height: mpx(60);
     margin-top: mpx(16);
     padding: mpx(24);
     border-radius: mpx(24);
