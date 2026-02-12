@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import giveawayPerson from '@assets/images/giveawayPerson.png'
 import { Registration, useGiveaway } from '@kosyanmedia/devcom-spec-uikit/dist/collections'
 import { SmartCaptcha } from '@kosyanmedia/devcom-spec-uikit/dist/elements'
+import { EmailFormProps } from '@kosyanmedia/devcom-spec-uikit/dist/modules'
 
 import { emailFormData, giveawayTexts, shareFormData, subscriptionFormData } from '~/data'
 import { winnersLink, winnersList } from '~/defs'
@@ -70,18 +71,21 @@ export const GiveawayDefault: React.FC = () => {
           <div className={classes.wrap}>
             <Registration
               currentStep={state.currentStep}
-              emailFormData={{
-                ...emailFormData,
-                onSubmit: handleRegister,
-                classes: {
-                  className: classes.giveawayEmailForm,
-                  stepClassName: classes.giveawayStep,
-                  textClassName: classes.giveawayEmailFormText,
-                  inputClassName: classes.giveawayEmailFormInput,
-                  checkboxClassName: classes.giveawayEmailFormCheckbox,
-                  buttonClassName: classes.giveawayEmailFormButton,
-                },
-              }}
+              emailFormData={
+                {
+                  ...emailFormData,
+                  onSubmit: handleRegister,
+                  disableCheckbox: true,
+                  classes: {
+                    className: classes.giveawayEmailForm,
+                    stepClassName: classes.giveawayStep,
+                    textClassName: classes.giveawayEmailFormText,
+                    inputClassName: classes.giveawayEmailFormInput,
+                    checkboxClassName: classes.giveawayEmailFormCheckbox,
+                    buttonClassName: classes.giveawayEmailFormButton,
+                  },
+                } as EmailFormProps
+              }
               shareFormData={{
                 ...shareFormData,
                 onShare: handleShare,

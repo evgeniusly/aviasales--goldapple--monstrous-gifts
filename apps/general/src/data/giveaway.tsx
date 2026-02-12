@@ -44,21 +44,25 @@ export const emailFormData: Omit<EmailFormProps, 'onSubmit'> = {
   emailErrorText: 'Похоже, в адрес почты закралась ошибка',
   userDataText: (
     <>
-      Соглашаюсь{' '}
+      Отправляя почту, вы&nbsp;соглашаетесь с&nbsp;
       <a href={links.rules} target="_blank">
-        с&nbsp;правилами акции
+        правилами акции
+      </a>{' '}
+      и&nbsp;
+      <a href={links.privacy} target="_blank">
+        политикой конфиденциальности
       </a>
     </>
   ),
-  checkboxes: [
-    <>
-      Соглашаюсь на&nbsp;
-      <a href={links.privacy} target="_blank">
-        обработку персональных данных
-      </a>{' '}
-      и&nbsp;получение информационных сообщений согласно политике обработки персональных данных
-    </>,
-  ],
+  // checkboxes: [
+  //   <>
+  //     Соглашаюсь на&nbsp;
+  //     <a href={links.privacy} target="_blank">
+  //       обработку персональных данных
+  //     </a>{' '}
+  //     и&nbsp;получение информационных сообщений согласно политике обработки персональных данных
+  //   </>,
+  // ],
 }
 
 export const shareFormData: Omit<ShareFormProps, 'onShare'> = {
