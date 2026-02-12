@@ -4,7 +4,7 @@
   min-height: 100vh;
 
   @include desktop {
-    padding: dpx(148 0 120);
+    padding: dpx(136 0 120);
   }
 
   @include mobile {
@@ -31,25 +31,6 @@
     margin-bottom: mpx(40);
   }
 }
-
-.resultTitle {
-  font-family: 'Bebas Neue', 'Inter', sans-serif;
-  font-weight: 700;
-  line-height: 115%;
-  text-align: center;
-
-  @include desktop {
-    margin-bottom: dpx(48);
-    font-size: dpx(64);
-  }
-
-  @include mobile {
-    width: mpx(335);
-    margin: 0 auto mpx(16);
-    font-size: mpx(36);
-  }
-}
-
 //
 .resultCards {
   --slider-transition-duration: 0.4s;

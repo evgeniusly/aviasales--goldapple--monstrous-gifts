@@ -1,3 +1,4 @@
+import { apxCssValue } from 'adaptive-pixel'
 import classNames from 'classnames'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSwipeable } from 'react-swipeable'
@@ -42,6 +43,14 @@ export const ScreenResults: React.FC = () => {
   const [isTestedLocal, resultData] = useMemo(() => {
     return [isTested, isTested ? anwerIds.map((id) => questions[id]?.result) : []]
   }, []) // do not subscribe this !
+
+  const [cardHeightMax, cardsWrapHeight] = useMemo(() => {
+    const cardHeightMax_ = resultData.reduce(
+      (max, { heightDesk, heightMob }) => Math.max(max, deskMob(heightDesk, heightMob)),
+      0,
+    )
+    return [cardHeightMax_, cardHeightMax_ + deskMob(166 + 16, 180 + 16)]
+  }, [deviceType])
 
   const swiperHandlers = useSwipeable({
     onSwipedLeft: () => nextCard(),
@@ -93,11 +102,9 @@ export const ScreenResults: React.FC = () => {
     <div className={classNames(classes.results, 'screen', isScreenInvisible && 'screenInvisible')}>
       <div className={classes.content}>
         <div className={classes.result}>
-          <div className={classes.resultTitle}>Ваша подборка чудовищных подарков</div>
-
           {isTestedLocal && (
             <>
-              <div className={classes.resultCards}>
+              <div className={classes.resultCards} style={{ height: apxCssValue(cardsWrapHeight) }}>
                 {resultData.map((result, cardId) => (
                   <div
                     key={cardId}
@@ -113,6 +120,7 @@ export const ScreenResults: React.FC = () => {
                       className={classes.resultCard}
                       {...(cardId === cardSelectedId ? swiperHandlers : {})}
                       onClick={() => selectCard(cardId)}
+                      style={{ height: apxCssValue(cardHeightMax) }}
                     >
                       <img className={classes.resultCardImage} src={result.image} alt="" draggable="false" />
                       <div className={classes.resultCardNumber}>Чудовищный подарок №{result.number}</div>

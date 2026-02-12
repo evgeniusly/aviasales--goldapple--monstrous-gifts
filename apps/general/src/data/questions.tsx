@@ -17,6 +17,8 @@ export const questions = [
   {
     option: <>Обожает свою работу</>,
     result: {
+      heightDesk: 563,
+      heightMob: 423,
       number: '1',
       image: res01,
       title: <>Номер вашей карты</>,
@@ -38,6 +40,8 @@ export const questions = [
   {
     option: <>Кофе как часть личности</>,
     result: {
+      heightDesk: 541,
+      heightMob: 406,
       number: '2',
       image: res02,
       title: <>Воронка и&nbsp;фильтр</>,
@@ -58,6 +62,8 @@ export const questions = [
   {
     option: <>Спорит со&nbsp;всеми в&nbsp;интернете</>,
     result: {
+      heightDesk: 563,
+      heightMob: 423,
       number: '3',
       image: res03,
       title: <>Охлаждающий элемент</>,
@@ -77,6 +83,8 @@ export const questions = [
   {
     option: <>Хочет больше путешествовать</>,
     result: {
+      heightDesk: 602,
+      heightMob: 460,
       number: '4',
       image: res04,
       title: <>Машинка для закатывания губы</>,
@@ -97,6 +105,8 @@ export const questions = [
   {
     option: <>В&nbsp;стрессе</>,
     result: {
+      heightDesk: 580,
+      heightMob: 443,
       number: '5',
       image: res05,
       title: <>Ноготь, который можно грызть</>,
@@ -116,6 +126,8 @@ export const questions = [
   {
     option: <>Печатает одним пальцем</>,
     result: {
+      heightDesk: 541,
+      heightMob: 406,
       number: '6',
       image: res06,
       title: <>Напальчник-ладошка</>,
@@ -136,6 +148,8 @@ export const questions = [
   {
     option: <>Вечно сидит дома</>,
     result: {
+      heightDesk: 602,
+      heightMob: 460,
       number: '7',
       image: res07,
       title: <>Табуретка с&nbsp;двумя ножками</>,
@@ -156,6 +170,8 @@ export const questions = [
   {
     option: <>Маниакально рукодельничает</>,
     result: {
+      heightDesk: 541,
+      heightMob: 406,
       number: '8',
       image: res08,
       title: <>Вышитая вышивка</>,
@@ -175,6 +191,8 @@ export const questions = [
   {
     option: <>Очень солидный человек</>,
     result: {
+      heightDesk: 563,
+      heightMob: 460,
       number: '9',
       image: res09,
       title: <>Костюм деловой колбасы</>,
@@ -194,6 +212,8 @@ export const questions = [
   {
     option: <>Модник-походник </>,
     result: {
+      heightDesk: 602,
+      heightMob: 460,
       number: '10',
       image: res10,
       title: <>Обвес из&nbsp;шишек и&nbsp;желудей</>,
@@ -219,6 +239,8 @@ export const questions = [
   {
     option: <>Планирует вообще всё</>,
     result: {
+      heightDesk: 563,
+      heightMob: 423,
       number: '11',
       image: res11,
       title: <>Успокаивающий плакат</>,
@@ -239,6 +261,8 @@ export const questions = [
   {
     option: <>Постоянно смотрит кино</>,
     result: {
+      heightDesk: 563,
+      heightMob: 423,
       number: '12',
       image: res12,
       title: <>Антиспойлер-система</>,
