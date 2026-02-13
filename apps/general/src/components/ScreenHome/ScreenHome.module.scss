@@ -176,7 +176,7 @@
 
   @include mobile {
     height: mpx(62.22);
-    margin-bottom: mpx(6);
+    margin-bottom: mpx(4);
     padding: mpx(10 20 0);
     font-size: mpx(60);
     line-height: mpx(42);
@@ -194,7 +194,7 @@
 
   @include mobile {
     font-size: mpx(100);
-    margin-bottom: mpx(-4);
+    margin-bottom: mpx(-6);
   }
 }
 
