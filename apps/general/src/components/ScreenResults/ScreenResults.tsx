@@ -242,7 +242,7 @@ export const ScreenResults: React.FC = () => {
             </div>
 
             <div className={classes.promoCodeWrap}>
-              <div className={classes.promoCodeTitle}>скидка до&nbsp;20% *</div>
+              <div className={classes.promoCodeTitle}>скидка до&nbsp;&minus;20% *</div>
               <div className={classes.promoCodeText}>На&nbsp;первый заказ по&nbsp;промокоду</div>
               <div className={classes.promoCodeButton}>
                 <ButtonPromocode promocode="АВИАСЕЙЛС" />
