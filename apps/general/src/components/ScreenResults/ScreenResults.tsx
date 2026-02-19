@@ -224,7 +224,7 @@ export const ScreenResults: React.FC = () => {
               <div className={classes.promoText}>
                 <p>
                   Тонко намекаем:{' '}
-                  <a href={links.client} target="_blank">
+                  <a href="https://goldapple.onelink.me/jLXC/4diimddn" target="_blank">
                     в&nbsp;&laquo;Золотом Яблоке&raquo;
                   </a>
                   . Категорий товаров там больше, чем кажется: есть и&nbsp;техника, и&nbsp;декор, и&nbsp;одежда.
@@ -237,7 +237,7 @@ export const ScreenResults: React.FC = () => {
                 </p>
               </div>
               <div className={classes.promoActions}>
-                <Button>Смотреть подборку</Button>
+                <Button href="https://goldapple.onelink.me/jLXC/kg686p30">Смотреть подборку</Button>
               </div>
             </div>
 
@@ -264,7 +264,7 @@ export const ScreenResults: React.FC = () => {
           <div className={classes.legal}>
             <p>
               *Размер скидки зависит от&nbsp;суммы заказа, промокод действует до&nbsp;NN.NN.NN. Подробности&nbsp;&mdash;{' '}
-              <a href={links.rules} target="_blank">
+              <a href="https://goldapple.onelink.me/jLXC/3gln2ece" target="_blank">
                 в&nbsp;правилах
               </a>
             </p>

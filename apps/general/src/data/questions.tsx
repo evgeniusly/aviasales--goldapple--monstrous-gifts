@@ -27,7 +27,7 @@ export const questions = [
       promo: (
         <>
           Если он&nbsp;уже в&nbsp;курсе, дарите{' '}
-          <a href="https://goldapple.ru/19000209010-orange-oakmoss" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/wnj456d1" target="_blank">
             аромат Orange &amp;&nbsp;Oakmoss
           </a>{' '}
           от&nbsp;Po&egrave;mes de&nbsp;Provence&nbsp;&mdash; с&nbsp;ним ваш трудоголик точно не&nbsp;забудет взять
@@ -50,7 +50,7 @@ export const questions = [
       promo: (
         <>
           Боитесь прогадать с&nbsp;посудой? Подарите{' '}
-          <a href="https://goldapple.ru/19000344226-aqua-gel-hyaluron-complex" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/ayqbyf76" target="_blank">
             тинт от&nbsp;Luxvisage
           </a>
           &nbsp;&mdash; он&nbsp;останется на&nbsp;губах даже после десяти чашек кофе
@@ -72,7 +72,7 @@ export const questions = [
       promo: (
         <>
           Если уберечь спорщика не&nbsp;получится, помогите ему восстановиться, например, с&nbsp;
-          <a href="https://goldapple.ru/19000434167-chaga-peptides" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/wn4j2aon" target="_blank">
             маской Chaga Peptides от&nbsp;Natura Siberica
           </a>
         </>
@@ -93,7 +93,7 @@ export const questions = [
       promo: (
         <>
           Ещё порадовать путешественника можно{' '}
-          <a href="https://goldapple.ru/19000132094-be-you-orange" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/r2ou8lrs" target="_blank">
             тревел-сетом от&nbsp;Curaprox
           </a>
           . Внутри радостного кейса&nbsp;&mdash; паста, щётка и&nbsp;ёршик
@@ -115,7 +115,7 @@ export const questions = [
       promo: (
         <>
           Если это слишком экстравагантно, помогите стрессующему иначе&nbsp;&mdash; подарите ему, например,{' '}
-          <a href="https://goldapple.ru/19000428813-collagen" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/qr5jm847" target="_blank">
             восстанавливающую маску от&nbsp;Ollin Professional
           </a>
         </>
@@ -136,7 +136,7 @@ export const questions = [
       promo: (
         <>
           А&nbsp;хорошим подарком может стать{' '}
-          <a href="https://goldapple.ru/99000065158-model-s-sensor-rmb-707s" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/xajbfs1w" target="_blank">
             фен-стайлер от&nbsp;Remez
           </a>
           &nbsp;&mdash; управлять им&nbsp;действительно можно одним прикосновением
@@ -158,7 +158,7 @@ export const questions = [
       promo: (
         <>
           Лучше подарите своему домоседу{' '}
-          <a href="https://goldapple.ru/19000237003-keratin-injection-20in1" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/ghupzgv9" target="_blank">
             профессиональный уход от&nbsp;ICE Professional
           </a>
           , чтобы ему не&nbsp;пришлось лишний раз вылезать из&nbsp;дома в&nbsp;салон
@@ -180,7 +180,7 @@ export const questions = [
       promo: (
         <>
           Если вышитую вышивку вы&nbsp;уже дарили в&nbsp;прошлом году, присмотритесь к&nbsp;
-          <a href="https://goldapple.ru/19000406752-texture" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/zyneuv7z" target="_blank">
             крему-тонику для укладки от&nbsp;Reuzel
           </a>
         </>
@@ -201,7 +201,7 @@ export const questions = [
       promo: (
         <>
           Если боитесь прогадать с&nbsp;солидностью, дайте получателю выбрать подарок самостоятельно, например, с&nbsp;
-          <a href="https://goldapple.ru/19000439419-gift-card" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/oiz5y77z" target="_blank">
             подарочной картой &laquo;Золотого Яблока&raquo;
           </a>
         </>
