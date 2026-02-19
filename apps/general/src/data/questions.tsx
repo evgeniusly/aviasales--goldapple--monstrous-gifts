@@ -227,7 +227,7 @@ export const questions = [
       promo: (
         <>
           Напомнить моднику-походнику о&nbsp;горах и&nbsp;лесах поможет{' '}
-          <a href="https://goldapple.ru/25380100012-daily-shampoo" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/ejhs82ke" target="_blank">
             ежедневный шампунь Reuzel
           </a>{' '}
           с&nbsp;запахом мяты и&nbsp;тонизирующими травами
@@ -250,7 +250,7 @@ export const questions = [
         <>
           Всё контролировать, может, и&nbsp;нельзя, но&nbsp;вот объёмную укладку&nbsp;&mdash; запросто. На&nbsp;помощь
           придёт{' '}
-          <a href="https://goldapple.ru/37730500002-superstar-qu" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/qe248079" target="_blank">
             спрей от&nbsp;Tigi Bed Head
           </a>
         </>
@@ -271,7 +271,7 @@ export const questions = [
       promo: (
         <>
           По-настоящему пригодиться на&nbsp;киномарафоне может{' '}
-          <a href="https://goldapple.ru/19000480724-lash-adept" target="_blank">
+          <a href="https://goldapple.onelink.me/jLXC/e8ygfjul" target="_blank">
             термотушь Shikstudio
           </a>
           , устойчивая к&nbsp;осыпанию
