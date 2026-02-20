@@ -263,7 +263,8 @@ export const ScreenResults: React.FC = () => {
         {!isDeadlined && (
           <div className={classes.legal}>
             <p>
-              *Размер скидки зависит от&nbsp;суммы заказа, промокод действует до&nbsp;NN.NN.NN. Подробности&nbsp;&mdash;{' '}
+              *Размер скидки зависит от&nbsp;суммы заказа, промокод действует до&nbsp;31.03.2026.
+              Подробности&nbsp;&mdash;{' '}
               <a href="https://goldapple.onelink.me/jLXC/3gln2ece" target="_blank">
                 в&nbsp;правилах
               </a>

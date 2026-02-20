@@ -22,13 +22,13 @@ export const giveawayTexts: {
   registered: {
     subscribedTitle: <>Ура, вы&nbsp;участвуете в&nbsp;розыгрыше!</>,
     subscribedText: (
-      <>Результаты опубликуем до&nbsp;NN.NN.NN на&nbsp;этой странице, а&nbsp;победителям напишем на&nbsp;почту.</>
+      <>Результаты опубликуем до&nbsp;04.04.2026 на&nbsp;этой странице, а&nbsp;победителям напишем на&nbsp;почту.</>
     ),
   },
 
   over: {
     giveawayOverTitle: <>Уже выбираем победителей</>,
-    giveawayOverText: <>Розыгрыш закончился, результаты опубликуем до&nbsp;NN.NN.NN на&nbsp;этой странице</>,
+    giveawayOverText: <>Розыгрыш закончился, результаты опубликуем до&nbsp;04.04.2026 на&nbsp;этой странице</>,
   },
 
   winners: {
@@ -71,26 +71,26 @@ export const shareFormData: Omit<ShareFormProps, 'onShare'> = {
   linksInfo: [
     {
       [SharingType.Vk]: {
-        link: `https://vk.com/share.php?url=https://i.avs.io/TODO`,
+        link: `https://vk.com/share.php?url=https://i.avs.io/SnV43EQ0`,
         // className: classes.linkVk
       },
     },
     {
       [SharingType.Telegram]: {
-        link: `https://telegram.me/share/url?url=https://i.avs.io/TODO`,
+        link: `https://telegram.me/share/url?url=https://i.avs.io/HETrAFVh`,
         // className: classes.linkTg,
       },
     },
     {
       [SharingType.Whatsapp]: {
-        link: `https://api.whatsapp.com/send?text=https://i.avs.io/TODO`,
+        link: `https://api.whatsapp.com/send?text=https://i.avs.io/v_xrwgSu`,
         // className: classes.linkWa,
       },
     },
     {
       [SharingType.Link]: {
-        link: window.location.origin,
-        // link: 'https://i.avs.io/TODO',
+        // link: window.location.origin,
+        link: 'https://i.avs.io/YV1mw0us',
         // className: classes.linkLn
       },
     },

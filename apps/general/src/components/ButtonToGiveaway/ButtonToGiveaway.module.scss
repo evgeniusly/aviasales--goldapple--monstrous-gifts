@@ -1,7 +1,7 @@
 // unrotated sizes
-$width: 276;
+$width: 368;
 $height: 72;
-$widthMob: 223;
+$widthMob: 296;
 $heightMob: 48;
 // rotated position
 $top: 423;
@@ -21,8 +21,9 @@ $topMob: 270;
   justify-content: center;
   align-items: center;
   position: fixed;
-  color: #161618;
+  color: #fff;
   font-weight: 600;
+  white-space: nowrap;
   background: #ff6d6d;
   transition: opacity var(--transition-main);
   animation: buttonToGiveawayAnim 4s ease-in-out infinite;

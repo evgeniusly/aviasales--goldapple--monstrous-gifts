@@ -11,7 +11,7 @@ interface IButtonToGiveawayProps {
 }
 
 export const ButtonToGiveaway: React.FC<IButtonToGiveawayProps> = ({
-  children = <>Розыгрыш там</>,
+  children = <>А там хорошие подарки</>,
   giveawayRef,
   className,
   onClick,
@@ -41,7 +41,7 @@ export const ButtonToGiveaway: React.FC<IButtonToGiveawayProps> = ({
       <svg className={classes.icon} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M5.93934 17.0607C5.35355 16.4749 5.35355 15.5251 5.93934 14.9393L15.4853 5.3934C16.0711 4.80761 17.0208 4.80761 17.6066 5.3934C18.1924 5.97919 18.1924 6.92893 17.6066 7.51472L9.12132 16L17.6066 24.4853C18.1924 25.0711 18.1924 26.0208 17.6066 26.6066C17.0208 27.1924 16.0711 27.1924 15.4853 26.6066L5.93934 17.0607ZM25 14.5C25.8284 14.5 26.5 15.1716 26.5 16C26.5 16.8284 25.8284 17.5 25 17.5L25 16L25 14.5ZM7 16L7 14.5L25 14.5L25 16L25 17.5L7 17.5L7 16Z"
-          fill="#161618"
+          fill="currentColor"
         />
       </svg>
       {children}
