@@ -21,7 +21,7 @@ export const ButtonToGiveaway: React.FC<IButtonToGiveawayProps> = ({
   const toGiveawayClick: React.MouseEventHandler<HTMLDivElement> = useCallback(
     (e) => {
       if (typeof onClick === 'function') onClick(e)
-      const _target = giveawayRef?.current ?? document.getElementById('giveaway')
+      const _target = giveawayRef?.current ?? document.getElementById('promo')
       _target?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     },
     [onClick],

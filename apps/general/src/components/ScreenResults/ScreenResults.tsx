@@ -216,7 +216,7 @@ export const ScreenResults: React.FC = () => {
         </div>
 
         {!isDeadlined && (
-          <div className={classes.promoWrap}>
+          <div id="promo" className={classes.promoWrap}>
             <div className={classes.promoBg}></div>
 
             <div className={classes.promoBody}>
