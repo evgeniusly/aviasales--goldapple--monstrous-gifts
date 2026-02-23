@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
+import { analyticsEvent } from '~/utils/analytics'
 import { copyToClipboard } from '~/utils/helpers'
 
 import classes from './ButtonPromocode.module.scss'
@@ -14,6 +15,7 @@ export const ButtonPromocode: React.FC<IButtonPromocodeProps> = ({ promocode, on
   const promoButtonTimerRef = useRef<NodeJS.Timeout>()
 
   const onPromoClick = useCallback(() => {
+    analyticsEvent('clickPromocode')
     clearTimeout(promoButtonTimerRef.current)
     void copyToClipboard(promocode)
     setPromoButtonText(onCopyText)

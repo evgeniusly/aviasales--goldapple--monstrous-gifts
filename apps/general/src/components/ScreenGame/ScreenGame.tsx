@@ -16,6 +16,7 @@ import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
 import { useGameStore } from '~/store/gameStore'
 import { useSoundStore } from '~/store/soundStore'
+import { analyticsEvent } from '~/utils/analytics'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -75,6 +76,8 @@ export const ScreenGame: React.FC = () => {
       }, 2000)
       return
     }
+
+    analyticsEvent('clickGenerate')
 
     setIsEnding(true)
     playSound(SoundName.loaderKeyboard)

@@ -15,6 +15,7 @@ import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
 import { useGameStore } from '~/store/gameStore'
 import { useSoundStore } from '~/store/soundStore'
+import { analyticsEvent } from '~/utils/analytics'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -60,6 +61,7 @@ export const ScreenResults: React.FC = () => {
   })
 
   const onRestartClick = useCallback(() => {
+    analyticsEvent('clickAgain')
     resetAll()
     gotoGame()
   }, [resetAll])
@@ -224,7 +226,11 @@ export const ScreenResults: React.FC = () => {
               <div className={classes.promoText}>
                 <p>
                   Тонко намекаем:{' '}
-                  <a href="https://goldapple.onelink.me/jLXC/4diimddn" target="_blank">
+                  <a
+                    href="https://goldapple.onelink.me/jLXC/4diimddn"
+                    target="_blank"
+                    onClick={() => analyticsEvent('clickTextpromo')}
+                  >
                     в&nbsp;&laquo;Золотом Яблоке&raquo;
                   </a>
                   . Категорий товаров там больше, чем кажется: есть и&nbsp;техника, и&nbsp;декор, и&nbsp;одежда.
@@ -237,7 +243,9 @@ export const ScreenResults: React.FC = () => {
                 </p>
               </div>
               <div className={classes.promoActions}>
-                <Button href="https://goldapple.onelink.me/jLXC/kg686p30">Смотреть подборку</Button>
+                <Button href="https://goldapple.onelink.me/jLXC/kg686p30" onClick={() => analyticsEvent('clickPromo')}>
+                  Смотреть подборку
+                </Button>
               </div>
             </div>
 

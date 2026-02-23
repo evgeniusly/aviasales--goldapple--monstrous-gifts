@@ -12,6 +12,7 @@ import { preloads } from '~/data'
 import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
 import { useSoundStore } from '~/store/soundStore'
+import { analyticsEvent } from '~/utils/analytics'
 import assetPreloader from '~/utils/assetPreloader'
 
 import { Button } from '../Button'
@@ -111,12 +112,20 @@ export const ScreenHome: React.FC = () => {
         <div className={classes.text}>Доверьте нашей злюке выбор шуточных подарков и&nbsp;выиграйте путешествие</div>
 
         <div className={classes.actions}>
-          <Button glow mod={'yellow'} onClick={gotoGame}>
+          <Button
+            glow
+            mod={'yellow'}
+            onClick={() => {
+              analyticsEvent('clickStart')
+              gotoGame()
+            }}
+          >
             Погнали
           </Button>
           <button
             className={classes.toResultsBtn}
             onClick={() => {
+              analyticsEvent('clickFinish')
               gotoResults()
               playSound(SoundName.button)
             }}

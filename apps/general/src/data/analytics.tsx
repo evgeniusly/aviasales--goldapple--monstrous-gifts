@@ -2,7 +2,24 @@ export const YM_ID = 106890353
 
 export const PIXEL = {}
 
-export const AEVENT = {}
+export const AEVENT = {
+  clickLogoAviasales: 'click_logo_aviasales',
+  clickLogoGoldapple: 'click_logo_goldapple',
+  clickRules: 'click_rules',
+  clickStart: 'click_start',
+  clickFinish: 'click_finish',
+  clickGenerate: 'click_generate',
+  clickGoodgifts: 'click_goodgifts',
+  clickAgain: 'click_again',
+  clickPromo: 'click_promo',
+  clickSend: 'click_send',
+  clickVk: 'click_vk',
+  clickWa: 'click_wa',
+  clickTg: 'click_tg',
+  clickCopy: 'click_copy',
+  clickTextpromo: 'click_textpromo',
+  clickPromocode: 'click_promocode',
+}
 
 export const METRIKA = {
   ym: {

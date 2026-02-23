@@ -9,6 +9,7 @@ import { links } from '~/data'
 import { SoundName } from '~/data/sounds'
 import { useAppStore } from '~/store/appStore'
 import { useSoundStore } from '~/store/soundStore'
+import { analyticsEvent } from '~/utils/analytics'
 
 import classes from './Header.module.scss'
 
@@ -30,7 +31,12 @@ export const Header: React.FC = () => {
     >
       <div className={classes.content}>
         <div className={classes.logos}>
-          <a className={classes.logoLink} href={links.aviasales} target="_blank">
+          <a
+            className={classes.logoLink}
+            href={links.aviasales}
+            target="_blank"
+            onClick={() => analyticsEvent('clickLogoAviasales')}
+          >
             <img src={aviasalesLogo} className={classes.aviasalesLogoImg} alt="aviasales" />
           </a>
 
@@ -39,13 +45,23 @@ export const Header: React.FC = () => {
             <path d="M8.80005 0.799988L0.799999 8.80004" stroke="#161618" strokeWidth="1.6" strokeLinecap="round" />
           </svg>
 
-          <a className={classes.logoLink} href={links.client} target="_blank">
+          <a
+            className={classes.logoLink}
+            href={links.client}
+            target="_blank"
+            onClick={() => analyticsEvent('clickLogoGoldapple')}
+          >
             <img src={clientLogo} className={classes.clientLogoImg} alt="" />
           </a>
         </div>
 
         <div className={classes.actions}>
-          <a className={classes.rulesLink} href={links.rules} target="_blank">
+          <a
+            className={classes.rulesLink}
+            href={links.rules}
+            target="_blank"
+            onClick={() => analyticsEvent('clickRules')}
+          >
             Правила
           </a>
           <button
