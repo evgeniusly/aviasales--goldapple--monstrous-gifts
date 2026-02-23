@@ -283,6 +283,7 @@ export const ScreenResults: React.FC = () => {
                 в&nbsp;правилах
               </a>
             </p>
+            <p>Реклама. ООО &laquo;Екатеринбург Яблоко&raquo;. ИНН: 6670381056&nbsp;erid: 2W5zFK5dcgZ</p>
           </div>
         )}
       </div>
