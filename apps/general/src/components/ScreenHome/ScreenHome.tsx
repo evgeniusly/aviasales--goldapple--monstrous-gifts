@@ -108,7 +108,7 @@ export const ScreenHome: React.FC = () => {
           <div className={classes.titleBot}>для {titleBot}</div>
         </div>
 
-        <div className={classes.text}>Доверьте нашей злюке выбор подарков и&nbsp;выиграйте путешествие </div>
+        <div className={classes.text}>Доверьте нашей злюке выбор шуточных подарков и&nbsp;выиграйте путешествие</div>
 
         <div className={classes.actions}>
           <Button glow mod={'yellow'} onClick={gotoGame}>
