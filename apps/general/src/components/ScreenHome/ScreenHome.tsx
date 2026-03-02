@@ -114,7 +114,7 @@ export const ScreenHome: React.FC = () => {
         <div className={classes.actions}>
           <Button
             glow
-            mod={'yellow'}
+            mod={'pink'}
             onClick={() => {
               analyticsEvent('clickStart')
               gotoGame()

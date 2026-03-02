@@ -6,7 +6,7 @@ import { useSoundStore } from '~/store/soundStore'
 
 import classes from './Button.module.scss'
 
-type TMod = 'outline' | 'yellow'
+type TMod = 'outline' | 'yellow' | 'pink'
 
 interface IButtonProps {
   children: React.ReactNode

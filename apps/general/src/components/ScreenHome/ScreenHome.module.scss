@@ -162,9 +162,9 @@
   width: fit-content;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffffff;
+  color: #161618;
   line-height: 96%;
-  background: var(--Black, #161618);
+  background: #ffffff;
 
   @include desktop {
     height: dpx(94);

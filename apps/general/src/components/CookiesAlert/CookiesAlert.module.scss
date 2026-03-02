@@ -1,9 +1,9 @@
 .cookies {
-  --cookies-bg-color: #fff;
+  --cookies-bg-color: #e3f5ff;
   --cookies-text-color: #161618;
-  --cookies-link-color: #ff6d6d;
-  --cookies-button-bg-color: #ff6d6d;
-  --cookies-button-text-color: #ffffff;
+  --cookies-link-color: #5083c2;
+  --cookies-button-bg-color: transparent;
+  --cookies-button-text-color: #000;
 
   display: flex;
   align-items: center;
@@ -68,7 +68,8 @@
     height: dpx(31);
     font-size: dpx(14);
     letter-spacing: dpx(-0.3);
-    border-radius: dpx(16);
+    border: mpx(1) solid #000;
+    border-radius: mpx(16);
     cursor: pointer;
 
     &:hover {

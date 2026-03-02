@@ -99,3 +99,16 @@ a.yellow {
     }
   }
 }
+
+.pink,
+a.pink {
+  color: #fff;
+  background: #ff5757;
+
+  @include desktop {
+    &:hover {
+      color: #fff;
+      background: #ff6d6d;
+    }
+  }
+}
