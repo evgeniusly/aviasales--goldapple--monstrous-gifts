@@ -23,7 +23,7 @@ import classes from './ScreenHome.module.scss'
 
 const titleTopList = ['Чудовищные', 'Ужасные', 'Кошмарные', 'Дикие', 'Беспощадные']
 const titleBotList = ['мамы', 'подружки', 'брата', 'бати', 'коллеги']
-const titleChangeDelayMs = 1000
+const titleChangeDelayMs = 1500
 const handAnimDurationMs = 600
 
 export const ScreenHome: React.FC = () => {
@@ -120,7 +120,7 @@ export const ScreenHome: React.FC = () => {
               gotoGame()
             }}
           >
-            Погнали
+            Начать игру
           </Button>
           <button
             className={classes.toResultsBtn}
